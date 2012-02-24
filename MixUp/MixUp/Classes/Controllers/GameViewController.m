@@ -1,0 +1,66 @@
+//
+//  GameViewController.m
+//  MixUp
+//
+//  Created by Vita on 2/24/12.
+//  Copyright (c) 2012 Al Digit. All rights reserved.
+//
+
+#import "GameViewController.h"
+#import "GameView.h"
+
+@implementation GameViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+
+}
+
+#pragma mark - View lifecycle
+
+
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+    NSArray * arr = [NSArray arrayWithObjects:@"bee", @"cat", @"dolphin", @"goose", @"horse", nil];
+    GameView * view = [[[GameView alloc] initWithImageNames:arr] autorelease];
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.view = view;
+}
+
+
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+   
+}
+
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+	return YES;
+}
+
+@end
