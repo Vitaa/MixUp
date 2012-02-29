@@ -7,86 +7,38 @@
 //
 
 #import "GameView.h"
+#import "InfiniteScrollView.h"
+#import "ImageManager.h"
 
 @interface GameView ()
-@property (nonatomic, retain) NSArray * imageNames;
 
-- (void)fillScrollView:(UIScrollView*)scrollView fromFolder:(NSString*)folder;
+
 @end
 
 @implementation GameView
 
-@synthesize imageNames;
 
-- (id)initWithImageNames:(NSArray*)imageNames_
+
+- (id)init
 {
     self = [super initWithFrame:CGRectZero];
     if (self) {
-        self.imageNames = imageNames_;
-        
-        headsScrollView = [[[UIScrollView alloc] initWithFrame:CGRectZero] autorelease];
-        headsScrollView.pagingEnabled = YES;
+    
+        headsScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, [[ImageManager sharedManager] headImageHeight])] autorelease];
         [self addSubview:headsScrollView];
-        [self fillScrollView:headsScrollView fromFolder:@"heads"];
-        
-        bodiesScrollView = [[[UIScrollView alloc] initWithFrame:CGRectZero] autorelease];
-        bodiesScrollView.pagingEnabled = YES;
+        [headsScrollView displayImages:[[ImageManager sharedManager] headsImages]];
+         
+        bodiesScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectMake(0.0, headsScrollView.frame.size.height, 320.0, [[ImageManager sharedManager] bodyImageHeight])] autorelease];
         [self addSubview:bodiesScrollView];
-        [self fillScrollView:bodiesScrollView fromFolder:@"bodies"];
-        
-        feetScrollView = [[[UIScrollView alloc] initWithFrame:CGRectZero] autorelease];
-        feetScrollView.pagingEnabled = YES;
+        [bodiesScrollView displayImages:[[ImageManager sharedManager] bodiesImages]];
+
+        feetScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectMake(0.0, bodiesScrollView.frame.size.height+bodiesScrollView.frame.origin.y, 320.0, [[ImageManager sharedManager] feetImageHeight])] autorelease];
         [self addSubview:feetScrollView];
-        [self fillScrollView:feetScrollView fromFolder:@"feet"];
+        [feetScrollView displayImages:[[ImageManager sharedManager] feetImages]];
+      
     }
     return self;
 }
 
-- (void) layoutSubviews {
-    [super layoutSubviews];
-    
-    CGFloat width  = self.frame.size.width;
-    CGFloat height = self.frame.size.height;
-    CGFloat scrollViewHeight = height/3.0;
-    CGFloat contentWidth = [imageNames count]*width;
-    
-    headsScrollView.frame  = CGRectMake(0.0, 0.0, width, scrollViewHeight);
-    headsScrollView.contentSize = CGSizeMake(contentWidth, scrollViewHeight);
-    CGFloat xOffset = 0.0;
-    for (UIView * view in headsScrollView.subviews) {
-        if ([view isKindOfClass:[UIImageView class]]) {
-            view.frame = CGRectMake(xOffset, 0.0, width, scrollViewHeight);
-            xOffset += width;
-        }
-    }
-   
-    xOffset = 0.0;
-    bodiesScrollView.frame = CGRectMake(0.0, scrollViewHeight, width, scrollViewHeight);
-    bodiesScrollView.contentSize = CGSizeMake(contentWidth, scrollViewHeight);
-    for (UIView * view in bodiesScrollView.subviews) {
-        if ([view isKindOfClass:[UIImageView class]]) {
-            view.frame = CGRectMake(xOffset, 0.0, width, scrollViewHeight);
-            xOffset += width;
-        }
-    }
-   
-    xOffset = 0.0;
-    feetScrollView.frame   = CGRectMake(0.0, scrollViewHeight*2.0, width, scrollViewHeight);
-    feetScrollView.contentSize = CGSizeMake(contentWidth, scrollViewHeight);
-    for (UIView * view in feetScrollView.subviews) {
-        if ([view isKindOfClass:[UIImageView class]]) {
-            view.frame = CGRectMake(xOffset, 0.0, width, scrollViewHeight);
-            xOffset += width;
-        }
-    }
-}
-
-- (void)fillScrollView:(UIScrollView*)scrollView fromFolder:(NSString*)folder {
-    for (NSString * imageName in imageNames) {
-        UIImageView * imgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@.png", folder, imageName]];
-        [scrollView addSubview:imgView];
-    }
-}
 
 @end

@@ -33,9 +33,8 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    NSArray * arr = [NSArray arrayWithObjects:@"bee", @"cat", @"dolphin", @"goose", @"horse", nil];
-    GameView * view = [[[GameView alloc] initWithImageNames:arr] autorelease];
-    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+     GameView * view = [[[GameView alloc] init] autorelease];
     self.view = view;
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */; };
+		586D140214FE46AC002A6150 /* animals in Resources */ = {isa = PBXBuildFile; fileRef = 586D140114FE46AC002A6150 /* animals */; };
+		586D140614FE4785002A6150 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D140514FE4785002A6150 /* ImageManager.m */; };
 		587003ED14F7748E00A727B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587003EC14F7748E00A727B8 /* UIKit.framework */; };
 		587003EF14F7748E00A727B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587003EE14F7748E00A727B8 /* Foundation.framework */; };
 		587003F114F7748E00A727B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587003F014F7748E00A727B8 /* CoreGraphics.framework */; };
@@ -18,14 +21,16 @@
 		5870041514F7774400A727B8 /* guess_button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870040E14F7774400A727B8 /* guess_button_normal.png */; };
 		5870041614F7774400A727B8 /* who_am_i_button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870040F14F7774400A727B8 /* who_am_i_button_normal.png */; };
 		5870041714F7774400A727B8 /* who_am_i_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870041014F7774400A727B8 /* who_am_i_button_selected.png */; };
-		5870041B14F7776400A727B8 /* bodies in Resources */ = {isa = PBXBuildFile; fileRef = 5870041814F7776400A727B8 /* bodies */; };
-		5870041C14F7776400A727B8 /* feet in Resources */ = {isa = PBXBuildFile; fileRef = 5870041914F7776400A727B8 /* feet */; };
-		5870041D14F7776400A727B8 /* heads in Resources */ = {isa = PBXBuildFile; fileRef = 5870041A14F7776400A727B8 /* heads */; };
 		5870042514F7781E00A727B8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870042414F7781E00A727B8 /* GameViewController.m */; };
 		5870042814F7783000A727B8 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870042714F7783000A727B8 /* GameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
+		582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
+		586D140114FE46AC002A6150 /* animals */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animals; sourceTree = "<group>"; };
+		586D140414FE4785002A6150 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		586D140514FE4785002A6150 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		587003E814F7748E00A727B8 /* MixUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MixUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587003EC14F7748E00A727B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		587003EE14F7748E00A727B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,9 +46,6 @@
 		5870040E14F7774400A727B8 /* guess_button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guess_button_normal.png; sourceTree = "<group>"; };
 		5870040F14F7774400A727B8 /* who_am_i_button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = who_am_i_button_normal.png; sourceTree = "<group>"; };
 		5870041014F7774400A727B8 /* who_am_i_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = who_am_i_button_selected.png; sourceTree = "<group>"; };
-		5870041814F7776400A727B8 /* bodies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bodies; sourceTree = "<group>"; };
-		5870041914F7776400A727B8 /* feet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = feet; sourceTree = "<group>"; };
-		5870041A14F7776400A727B8 /* heads */ = {isa = PBXFileReference; lastKnownFileType = folder; path = heads; sourceTree = "<group>"; };
 		5870042314F7781E00A727B8 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		5870042414F7781E00A727B8 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		5870042614F7783000A727B8 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
@@ -64,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		586D140314FE475A002A6150 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				586D140414FE4785002A6150 /* ImageManager.h */,
+				586D140514FE4785002A6150 /* ImageManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		587003DD14F7748D00A727B8 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +127,7 @@
 		5870040314F7770B00A727B8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				586D140314FE475A002A6150 /* Model */,
 				5870042214F777AE00A727B8 /* Views */,
 				5870042114F777A500A727B8 /* Controllers */,
 			);
@@ -125,21 +137,11 @@
 		5870040414F7771800A727B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				586D140114FE46AC002A6150 /* animals */,
 				5870040614F7774400A727B8 /* en.lproj */,
 				5870040914F7774400A727B8 /* ru.lproj */,
-				5870040514F7772A00A727B8 /* animals */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		5870040514F7772A00A727B8 /* animals */ = {
-			isa = PBXGroup;
-			children = (
-				5870041814F7776400A727B8 /* bodies */,
-				5870041914F7776400A727B8 /* feet */,
-				5870041A14F7776400A727B8 /* heads */,
-			);
-			path = animals;
 			sourceTree = "<group>";
 		};
 		5870040614F7774400A727B8 /* en.lproj */ = {
@@ -184,6 +186,8 @@
 			children = (
 				5870042614F7783000A727B8 /* GameView.h */,
 				5870042714F7783000A727B8 /* GameView.m */,
+				582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */,
+				582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,9 +249,7 @@
 				5870041514F7774400A727B8 /* guess_button_normal.png in Resources */,
 				5870041614F7774400A727B8 /* who_am_i_button_normal.png in Resources */,
 				5870041714F7774400A727B8 /* who_am_i_button_selected.png in Resources */,
-				5870041B14F7776400A727B8 /* bodies in Resources */,
-				5870041C14F7776400A727B8 /* feet in Resources */,
-				5870041D14F7776400A727B8 /* heads in Resources */,
+				586D140214FE46AC002A6150 /* animals in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +264,8 @@
 				587003FD14F7748E00A727B8 /* AppDelegate.m in Sources */,
 				5870042514F7781E00A727B8 /* GameViewController.m in Sources */,
 				5870042814F7783000A727B8 /* GameView.m in Sources */,
+				582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */,
+				586D140614FE4785002A6150 /* ImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +360,7 @@
 				5870040214F7748E00A727B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

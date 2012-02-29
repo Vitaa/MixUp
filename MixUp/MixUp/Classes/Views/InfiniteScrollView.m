@@ -1,0 +1,57 @@
+//
+//  InfiniteScrollView.m
+//  MixUp
+//
+//  Created by Vita on 2/28/12.
+//  Copyright (c) 2012 MixUp. All rights reserved.
+//
+
+#import "InfiniteScrollView.h"
+
+@implementation InfiniteScrollView
+
+- (id)initWithFrame:(CGRect)frame {
+    if ((self = [super initWithFrame:frame])) {
+        self.showsVerticalScrollIndicator   = NO;
+        self.showsHorizontalScrollIndicator = NO;
+        self.delegate                       = self;
+        self.pagingEnabled                  = YES;     
+    }
+    return self;
+}
+
+- (void)displayImages:(NSArray*)images {
+
+    UIImageView * imgView = [[[UIImageView alloc] initWithImage:[images lastObject]] autorelease];
+    [self addSubview:imgView];
+    
+    CGFloat width = self.frame.size.width;
+    CGFloat xOffset = width;
+    for (int i=0; i < [images count]; i++) {
+        UIImageView * imgView = [[[UIImageView alloc] initWithImage:[images objectAtIndex:i]] autorelease];
+        imgView.frame = CGRectMake(xOffset, 0.0, imgView.image.size.width, imgView.image.size.height);
+        [self addSubview:imgView];
+        xOffset += width;
+    }
+    imgView = [[[UIImageView alloc] initWithImage:[images objectAtIndex:0]] autorelease];
+    imgView.frame = CGRectMake(xOffset, 0.0, imgView.image.size.width, imgView.image.size.height);
+    [self addSubview:imgView];
+    
+    self.contentSize = CGSizeMake(xOffset+width, self.frame.size.height);
+//    [scrollView setContentOffset:CGPointMake(width, 0)];
+}
+
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
+    int page = self.contentOffset.x / self.frame.size.width;
+    int pageCount = self.contentSize.width / self.frame.size.width;
+    if (page == 0) {
+        [self setContentOffset:CGPointMake((pageCount-2)*320, 0)];
+    }
+    if (page == pageCount-1) {
+        [self setContentOffset:CGPointMake(320, 0)];
+    }
+}
+
+@end

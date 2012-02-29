@@ -3,17 +3,17 @@
 //  MixUp
 //
 //  Created by Vita on 2/24/12.
-//  Copyright (c) 2012 Al Digit. All rights reserved.
+//  Copyright (c) 2012 MixUp. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+@class InfiniteScrollView;
 
 @interface GameView : UIView {
-    UIScrollView * headsScrollView;
-    UIScrollView * bodiesScrollView;
-    UIScrollView * feetScrollView;
+    InfiniteScrollView * headsScrollView;
+    InfiniteScrollView * bodiesScrollView;
+    InfiniteScrollView * feetScrollView;
 }
 
-- (id)initWithImageNames:(NSArray*)imageNames;
 
 @end
