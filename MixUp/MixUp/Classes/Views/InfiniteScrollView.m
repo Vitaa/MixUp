@@ -3,7 +3,7 @@
 //  MixUp
 //
 //  Created by Vita on 2/28/12.
-//  Copyright (c) 2012 MixUp. All rights reserved.
+//  Copyright (c) 2012 Mix Up. All rights reserved.
 //
 
 #import "InfiniteScrollView.h"
@@ -25,32 +25,44 @@
     UIImageView * imgView = [[[UIImageView alloc] initWithImage:[images lastObject]] autorelease];
     [self addSubview:imgView];
     
-    CGFloat width = self.frame.size.width;
-    CGFloat xOffset = width;
     for (int i=0; i < [images count]; i++) {
         UIImageView * imgView = [[[UIImageView alloc] initWithImage:[images objectAtIndex:i]] autorelease];
-        imgView.frame = CGRectMake(xOffset, 0.0, imgView.image.size.width, imgView.image.size.height);
         [self addSubview:imgView];
-        xOffset += width;
     }
     imgView = [[[UIImageView alloc] initWithImage:[images objectAtIndex:0]] autorelease];
-    imgView.frame = CGRectMake(xOffset, 0.0, imgView.image.size.width, imgView.image.size.height);
     [self addSubview:imgView];
     
-    self.contentSize = CGSizeMake(xOffset+width, self.frame.size.height);
-//    [scrollView setContentOffset:CGPointMake(width, 0)];
+    [self setNeedsLayout];
 }
 
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat xOffset = 0.0;
+    CGFloat width   = self.frame.size.width;
+    CGFloat height  = self.frame.size.height;
+    
+    for (UIView * subview in self.subviews) {
+        if ([subview isKindOfClass:[UIImageView class]]) {
+            UIImageView * imgView = (UIImageView*)subview;
+            imgView.frame = CGRectMake(xOffset, 0.0, width, height);
+            xOffset += width;
+        }
+    }
+    
+    self.contentSize = CGSizeMake(xOffset+width, self.frame.size.height);
+}
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
     int page = self.contentOffset.x / self.frame.size.width;
     int pageCount = self.contentSize.width / self.frame.size.width;
     if (page == 0) {
-        [self setContentOffset:CGPointMake((pageCount-2)*320, 0)];
+        [self setContentOffset:CGPointMake((pageCount-2)*self.frame.size.width, 0)];
     }
     if (page == pageCount-1) {
-        [self setContentOffset:CGPointMake(320, 0)];
+        [self setContentOffset:CGPointMake(self.frame.size.width, 0)];
     }
 }
 

@@ -3,7 +3,7 @@
 //  MixUp
 //
 //  Created by Vita on 2/24/12.
-//  Copyright (c) 2012 Al Digit. All rights reserved.
+//  Copyright (c) 2012 Mix Up. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

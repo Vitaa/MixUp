@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581FC30A14FF116B001B2287 /* UIImage+ContentsOfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */; };
 		582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */; };
 		586D140214FE46AC002A6150 /* animals in Resources */ = {isa = PBXBuildFile; fileRef = 586D140114FE46AC002A6150 /* animals */; };
 		586D140614FE4785002A6150 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D140514FE4785002A6150 /* ImageManager.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581FC30814FF116B001B2287 /* UIImage+ContentsOfFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ContentsOfFile.h"; sourceTree = "<group>"; };
+		581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ContentsOfFile.m"; sourceTree = "<group>"; };
 		582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
 		582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
 		586D140114FE46AC002A6150 /* animals */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animals; sourceTree = "<group>"; };
@@ -66,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581FC30714FF1134001B2287 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				581FC30814FF116B001B2287 /* UIImage+ContentsOfFile.h */,
+				581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		586D140314FE475A002A6150 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +139,7 @@
 		5870040314F7770B00A727B8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				581FC30714FF1134001B2287 /* Categories */,
 				586D140314FE475A002A6150 /* Model */,
 				5870042214F777AE00A727B8 /* Views */,
 				5870042114F777A500A727B8 /* Controllers */,
@@ -266,6 +279,7 @@
 				5870042814F7783000A727B8 /* GameView.m in Sources */,
 				582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */,
 				586D140614FE4785002A6150 /* ImageManager.m in Sources */,
+				581FC30A14FF116B001B2287 /* UIImage+ContentsOfFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +339,7 @@
 				INFOPLIST_FILE = "MixUp/MixUp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -337,6 +352,7 @@
 				INFOPLIST_FILE = "MixUp/MixUp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

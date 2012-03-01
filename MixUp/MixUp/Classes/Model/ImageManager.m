@@ -7,6 +7,7 @@
 //
 
 #import "ImageManager.h"
+#import "UIImage+ContentsOfFile.h"
 
 @interface ImageManager() 
 
@@ -44,7 +45,7 @@
 
 - (id) init {
     if ((self = [super init])) {
-        NSString * path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Animals"];
+        NSString * path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"animals"];
         NSArray * animals = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil]; 
         
         self.headsImagePaths  = [self animalPartsFromArray:animals withPrefix:@"head" fullPath:path];
@@ -67,7 +68,7 @@
 - (NSArray*)headsImages {
     NSMutableArray * images = [NSMutableArray array];
     for (NSString * path in headsImagePaths){
-        [images addObject:[UIImage imageWithContentsOfFile:path]];
+        [images addObject:[UIImage imageWithContentsOfResolutionIndependentFile:path]];
     }
     return images;
 }
@@ -75,7 +76,7 @@
 - (NSArray*)bodiesImages {
     NSMutableArray * images = [NSMutableArray array];
     for (NSString * path in bodiesImagePaths){
-        [images addObject:[UIImage imageWithContentsOfFile:path]];
+        [images addObject:[UIImage imageWithContentsOfResolutionIndependentFile:path]];
     }
     return images;
 }
@@ -83,7 +84,7 @@
 - (NSArray*)feetImages {
     NSMutableArray * images = [NSMutableArray array];
     for (NSString * path in feetImagePaths){
-        [images addObject:[UIImage imageWithContentsOfFile:path]];
+        [images addObject:[UIImage imageWithContentsOfResolutionIndependentFile:path]];
     }
     return images;
 }
@@ -91,28 +92,29 @@
 - (CGFloat)headImageHeight {
     if (headImgHeight != 0.0)
         return headImgHeight;
-    headImgHeight = [UIImage imageWithContentsOfFile:[headsImagePaths lastObject]].size.height;
+    headImgHeight = [UIImage imageWithContentsOfResolutionIndependentFile:[headsImagePaths lastObject]].size.height;
     return headImgHeight;
 }
 
 - (CGFloat)bodyImageHeight {
     if (bodyImgHeight != 0.0)
         return bodyImgHeight;
-    bodyImgHeight = [UIImage imageWithContentsOfFile:[bodiesImagePaths lastObject]].size.height;
+    bodyImgHeight = [UIImage imageWithContentsOfResolutionIndependentFile:[bodiesImagePaths lastObject]].size.height;
+
     return bodyImgHeight;
 }
 
 - (CGFloat)feetImageHeight {
     if (feetImgHeight != 0.0)
         return feetImgHeight;
-    feetImgHeight = [UIImage imageWithContentsOfFile:[feetImagePaths lastObject]].size.height;
+    feetImgHeight = [UIImage imageWithContentsOfResolutionIndependentFile:[feetImagePaths lastObject]].size.height;
     return feetImgHeight;
 
 }
 
 #pragma  mark - private
 - (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix fullPath:(NSString*)fullPath {
-    NSArray * heads = [animals filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"self contains[c] %@ AND not self contains[c] '@2x'", prefix]];
+    NSArray * heads = [animals filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"self contains[c] %@ AND not self contains[c] '~iphone'", prefix]];
     NSMutableArray * headsFullPaths = [NSMutableArray array];
     for (NSString * path in heads) {
         [headsFullPaths addObject:[fullPath stringByAppendingPathComponent:path]];

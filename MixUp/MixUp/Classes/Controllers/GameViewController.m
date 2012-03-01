@@ -3,7 +3,7 @@
 //  MixUp
 //
 //  Created by Vita on 2/24/12.
-//  Copyright (c) 2012 Al Digit. All rights reserved.
+//  Copyright (c) 2012 Mix Up. All rights reserved.
 //
 
 #import "GameViewController.h"
@@ -33,8 +33,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    
-     GameView * view = [[[GameView alloc] init] autorelease];
+    GameView * view = [[[GameView alloc] init] autorelease];
     self.view = view;
 }
 
