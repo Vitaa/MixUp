@@ -110,6 +110,12 @@
 
 }
 
+- (NSString*)animalNameForIndex:(NSInteger)index {
+    NSString * fileName = [[feetImagePaths objectAtIndex:index] lastPathComponent];
+    NSInteger _loc = [fileName rangeOfString:@"_"].location;
+    return [fileName substringToIndex:_loc];
+}
+
 #pragma  mark - private
 - (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix fullPath:(NSString*)fullPath {
     NSArray * heads = [animals filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"self contains[c] %@ AND not self contains[c] '~iphone'", prefix]];

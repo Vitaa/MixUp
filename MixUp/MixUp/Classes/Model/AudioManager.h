@@ -10,6 +10,7 @@
 
 @interface AudioManager : NSObject <AVAudioPlayerDelegate>
 {
+    AVAudioPlayer * player;
 }
 
 + (AudioManager*)sharedManager;

@@ -20,4 +20,6 @@
 - (CGFloat)bodyImageHeight;
 - (CGFloat)feetImageHeight;
 
+- (NSString*)animalNameForIndex:(NSInteger)index;
+
 @end

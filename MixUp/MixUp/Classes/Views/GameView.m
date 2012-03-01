@@ -2,51 +2,47 @@
 //  GameView.m
 //  MixUp
 //
-//  Created by Vita on 2/24/12.
+//  Created by Vita on 3/1/12.
 //  Copyright (c) 2012 Mix Up. All rights reserved.
 //
 
 #import "GameView.h"
-#import "InfiniteScrollView.h"
-#import "ImageManager.h"
-
-@interface GameView ()
-
-
-@end
+#import "AnimalsView.h"
+#import "AudioManager.h"
 
 @implementation GameView
 
-
-
-- (id)init
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:CGRectZero];
+    self = [super initWithFrame:frame];
     if (self) {
-    
-        headsScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectZero] autorelease];
-        [self addSubview:headsScrollView];
-        [headsScrollView displayImages:[[ImageManager sharedManager] headsImages]];
-         
-        bodiesScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectZero] autorelease];
-        [self addSubview:bodiesScrollView];
-        [bodiesScrollView displayImages:[[ImageManager sharedManager] bodiesImages]];
-
-        feetScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectZero] autorelease];
-        [self addSubview:feetScrollView];
-        [feetScrollView displayImages:[[ImageManager sharedManager] feetImages]];
-      
+        animalsView = [[[AnimalsView alloc] init] autorelease];
+        [self addSubview:animalsView];
+        
+        UIImage * whoAmIImg = [UIImage imageNamed:@"who_am_i_button_normal.png"];
+        whoAmIBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, whoAmIImg.size.width, whoAmIImg.size.height)] autorelease];
+        [whoAmIBtn setBackgroundImage:whoAmIImg forState:UIControlStateNormal];
+        [whoAmIBtn addTarget:self action:@selector(whoAmI:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:whoAmIBtn];
     }
     return self;
 }
 
-- (void)layoutSubviews {
+-(void)layoutSubviews {
     [super layoutSubviews];
-  
-    headsScrollView.frame   = CGRectMake(0.0, 0.0, self.frame.size.width, [[ImageManager sharedManager] headImageHeight]);
-    bodiesScrollView.frame  = CGRectMake(0.0, headsScrollView.frame.size.height, self.frame.size.width, [[ImageManager sharedManager] bodyImageHeight]);
-    feetScrollView.frame    = CGRectMake(0.0, bodiesScrollView.frame.size.height+bodiesScrollView.frame.origin.y, self.frame.size.width, [[ImageManager sharedManager] feetImageHeight]);
+    
+    animalsView.frame = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
+    
+    CGRect btnFrame = whoAmIBtn.frame;
+    btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
+    btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
+    whoAmIBtn.frame = btnFrame;
 }
 
+- (void)whoAmI:(id)sender {
+    NSArray * animals = [animalsView currentAnimals];
+    NSLog(@"%@", animals);
+    [[AudioManager sharedManager] playSoundsForAnimalWithNames:animals];
+}
 
 @end

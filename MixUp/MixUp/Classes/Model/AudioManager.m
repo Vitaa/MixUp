@@ -10,9 +10,15 @@
 
 @interface AudioManager ()
 - (NSArray*)soundNamesForAnimals:(NSArray*)names;
+- (void)playNextSound;
+
+@property (nonatomic, retain) NSArray   * sounds;
+@property (nonatomic, assign) NSInteger currentSound;
 @end
 
 @implementation AudioManager
+
+@synthesize sounds, currentSound;
 
 #pragma mark - singleton
 
@@ -35,16 +41,35 @@
 
 #pragma mark - public
 - (void)playSoundsForAnimalWithNames:(NSArray*)names {
-    NSMutableArray * sounds = [NSMutableArray arrayWithArray:[self soundNamesForAnimals:names]];
-    [sounds insertObject:@"this_is.wav" atIndex:0];
-    
+    NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimals:names]];
+    [sounds_ insertObject:@"this_is" atIndex:0];
+    self.sounds = sounds_;
+    self.currentSound = 0;
+    if (player && [player isPlaying])
+        [player stop];
+    [self playNextSound];
+}
+
+#pragma mark - AudioPlayer Delegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    currentSound++;
+    [self playNextSound];
 }
 
 
 #pragma mark - private
-- (void) playSounds:(NSArray*)sounds index:(NSInteger)soundIndex {
-    if (soundIndex < [sounds count]) {
-       // AVAudioPlayer * audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:<#(NSURL *)#> error:<#(NSError **)#>];
+- (NSURL*)urlForSoundName:(NSString*)name {
+    return [[NSBundle mainBundle] URLForResource:name withExtension:@"wav"];
+}
+
+- (void) playNextSound {
+    if (currentSound < [sounds count]) {
+        if (player) {
+            [player release];
+        }
+        player = [[AVAudioPlayer alloc] initWithContentsOfURL:[self urlForSoundName:[sounds objectAtIndex:currentSound]] error:nil];
+        player.delegate = self;
+        [player play];
     }
 }
  
@@ -55,24 +80,24 @@
     
     if ([topAnimal isEqualToString:middleAnimal]) {
         if ([topAnimal isEqualToString:bottomAnimal]) {
-            return [NSArray arrayWithObject:[NSString stringWithFormat:@"%@_full.wav", topAnimal]];
+            return [NSArray arrayWithObject:[NSString stringWithFormat:@"%@_full", topAnimal]];
         }
         else
             return [NSArray arrayWithObjects:
-                    [NSString stringWithFormat:@"%@_part.wav", topAnimal],
-                    [NSString stringWithFormat:@"%@_full.wav", bottomAnimal], nil];
+                    [NSString stringWithFormat:@"%@_part", topAnimal],
+                    [NSString stringWithFormat:@"%@_full", bottomAnimal], nil];
     }
     else {
         if ([middleAnimal isEqualToString:bottomAnimal]){
             return [NSArray arrayWithObjects:
-                    [NSString stringWithFormat:@"%@_part.wav", topAnimal],
-                    [NSString stringWithFormat:@"%@_full.wav", bottomAnimal], nil];
+                    [NSString stringWithFormat:@"%@_part", topAnimal],
+                    [NSString stringWithFormat:@"%@_full", bottomAnimal], nil];
         }
         else {
             return [NSArray arrayWithObjects:
-                    [NSString stringWithFormat:@"%@_part.wav", topAnimal],
-                    [NSString stringWithFormat:@"%@_part.wav", middleAnimal],
-                    [NSString stringWithFormat:@"%@_full.wav", bottomAnimal], nil];
+                    [NSString stringWithFormat:@"%@_part", topAnimal],
+                    [NSString stringWithFormat:@"%@_part", middleAnimal],
+                    [NSString stringWithFormat:@"%@_full", bottomAnimal], nil];
         }
     }
 }

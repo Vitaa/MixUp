@@ -14,5 +14,6 @@
 }
 
 - (void)displayImages:(NSArray*)images;
+- (NSInteger)currentImageIndex;
 
 @end

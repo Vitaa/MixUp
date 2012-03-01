@@ -35,6 +35,9 @@
     [self setNeedsLayout];
 }
 
+- (NSInteger)currentImageIndex {
+    return self.contentOffset.x / self.frame.size.width;
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];

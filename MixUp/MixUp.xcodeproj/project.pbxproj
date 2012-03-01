@@ -31,6 +31,8 @@
 		581FC33514FF14F2001B2287 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC32014FF14F2001B2287 /* win.wav */; };
 		581FC33B14FF1599001B2287 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 581FC33A14FF1599001B2287 /* AudioManager.m */; };
 		581FC33D14FF15AA001B2287 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581FC33C14FF15AA001B2287 /* AVFoundation.framework */; };
+		581FC34714FF8E01001B2287 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581FC34614FF8E01001B2287 /* Security.framework */; };
+		581FC34B14FF9232001B2287 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581FC34A14FF9231001B2287 /* GameView.m */; };
 		582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */; };
 		586D140214FE46AC002A6150 /* animals in Resources */ = {isa = PBXBuildFile; fileRef = 586D140114FE46AC002A6150 /* animals */; };
 		586D140614FE4785002A6150 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D140514FE4785002A6150 /* ImageManager.m */; };
@@ -46,7 +48,7 @@
 		5870041614F7774400A727B8 /* who_am_i_button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870040F14F7774400A727B8 /* who_am_i_button_normal.png */; };
 		5870041714F7774400A727B8 /* who_am_i_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5870041014F7774400A727B8 /* who_am_i_button_selected.png */; };
 		5870042514F7781E00A727B8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870042414F7781E00A727B8 /* GameViewController.m */; };
-		5870042814F7783000A727B8 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870042714F7783000A727B8 /* GameView.m */; };
+		5870042814F7783000A727B8 /* AnimalsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5870042714F7783000A727B8 /* AnimalsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,9 @@
 		581FC33914FF1599001B2287 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		581FC33A14FF1599001B2287 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManager.m; sourceTree = "<group>"; };
 		581FC33C14FF15AA001B2287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		581FC34614FF8E01001B2287 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		581FC34914FF9231001B2287 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		581FC34A14FF9231001B2287 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
 		582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
 		586D140114FE46AC002A6150 /* animals */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animals; sourceTree = "<group>"; };
@@ -98,8 +103,8 @@
 		5870041014F7774400A727B8 /* who_am_i_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = who_am_i_button_selected.png; sourceTree = "<group>"; };
 		5870042314F7781E00A727B8 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		5870042414F7781E00A727B8 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		5870042614F7783000A727B8 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
-		5870042714F7783000A727B8 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		5870042614F7783000A727B8 /* AnimalsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalsView.h; sourceTree = "<group>"; };
+		5870042714F7783000A727B8 /* AnimalsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581FC34714FF8E01001B2287 /* Security.framework in Frameworks */,
 				581FC33D14FF15AA001B2287 /* AVFoundation.framework in Frameworks */,
 				587003ED14F7748E00A727B8 /* UIKit.framework in Frameworks */,
 				587003EF14F7748E00A727B8 /* Foundation.framework in Frameworks */,
@@ -185,6 +191,7 @@
 		587003EB14F7748E00A727B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				581FC34614FF8E01001B2287 /* Security.framework */,
 				581FC33C14FF15AA001B2287 /* AVFoundation.framework */,
 				587003EC14F7748E00A727B8 /* UIKit.framework */,
 				587003EE14F7748E00A727B8 /* Foundation.framework */,
@@ -277,10 +284,12 @@
 		5870042214F777AE00A727B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5870042614F7783000A727B8 /* GameView.h */,
-				5870042714F7783000A727B8 /* GameView.m */,
+				5870042614F7783000A727B8 /* AnimalsView.h */,
+				5870042714F7783000A727B8 /* AnimalsView.m */,
 				582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */,
 				582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */,
+				581FC34914FF9231001B2287 /* GameView.h */,
+				581FC34A14FF9231001B2287 /* GameView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,11 +386,12 @@
 				587003F914F7748E00A727B8 /* main.m in Sources */,
 				587003FD14F7748E00A727B8 /* AppDelegate.m in Sources */,
 				5870042514F7781E00A727B8 /* GameViewController.m in Sources */,
-				5870042814F7783000A727B8 /* GameView.m in Sources */,
+				5870042814F7783000A727B8 /* AnimalsView.m in Sources */,
 				582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */,
 				586D140614FE4785002A6150 /* ImageManager.m in Sources */,
 				581FC30A14FF116B001B2287 /* UIImage+ContentsOfFile.m in Sources */,
 				581FC33B14FF1599001B2287 /* AudioManager.m in Sources */,
+				581FC34B14FF9232001B2287 /* GameView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

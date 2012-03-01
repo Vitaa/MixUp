@@ -12,7 +12,7 @@
 
 - (id)initWithContentsOfResolutionIndependentFile:(NSString *)path {
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
-        [self initWithData:[NSData dataWithContentsOfFile:path]];
+        return [self initWithData:[NSData dataWithContentsOfFile:path]];
     }
     else {
         if ([[UIScreen mainScreen] scale] == 2.0) { // retina
