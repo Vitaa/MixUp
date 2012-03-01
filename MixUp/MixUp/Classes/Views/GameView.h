@@ -9,10 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @class AnimalsView;
+@class GameView;
+
+@protocol GameViewProtocol <NSObject>
+
+@optional
+- (void)gameView:(GameView*)gameView whoAmIPressedWithAnimals:(NSArray*)animals;
+- (void)gameViewBackButtonPressed:(GameView*)gameView;
+
+@end
 
 @interface GameView : UIView {
     AnimalsView * animalsView;
     UIButton * whoAmIBtn;
+    UIButton * backBtn;
 }
+
+@property (nonatomic, assign) id <GameViewProtocol> delegate;
 
 @end

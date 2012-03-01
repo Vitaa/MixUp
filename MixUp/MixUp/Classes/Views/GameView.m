@@ -8,14 +8,18 @@
 
 #import "GameView.h"
 #import "AnimalsView.h"
-#import "AudioManager.h"
+
 
 @implementation GameView
+
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+        
         animalsView = [[[AnimalsView alloc] init] autorelease];
         [self addSubview:animalsView];
         
@@ -24,6 +28,12 @@
         [whoAmIBtn setBackgroundImage:whoAmIImg forState:UIControlStateNormal];
         [whoAmIBtn addTarget:self action:@selector(whoAmI:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:whoAmIBtn];
+        
+        UIImage * backImg = [UIImage imageNamed:@"back.png"];
+        backBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, backImg.size.width, backImg.size.height)] autorelease];
+        [backBtn setBackgroundImage:backImg forState:UIControlStateNormal];
+        [backBtn addTarget:self action:@selector(onBack:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:backBtn];
     }
     return self;
 }
@@ -37,12 +47,21 @@
     btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
     btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
     whoAmIBtn.frame = btnFrame;
+    
+    CGRect backFrame = backBtn.frame;
+    backFrame.origin.x = 10.0;
+    backFrame.origin.y = 10.0;
+    backBtn.frame = backFrame;
 }
 
 - (void)whoAmI:(id)sender {
-    NSArray * animals = [animalsView currentAnimals];
-    NSLog(@"%@", animals);
-    [[AudioManager sharedManager] playSoundsForAnimalWithNames:animals];
+    if ([delegate respondsToSelector:@selector(gameView:whoAmIPressedWithAnimals:)])
+        [delegate gameView:self whoAmIPressedWithAnimals:[animalsView currentAnimals]];
+}
+
+- (void)onBack:(id)sender {
+    if ([delegate respondsToSelector:@selector(gameViewBackButtonPressed:)])
+        [delegate gameViewBackButtonPressed:self];
 }
 
 @end
