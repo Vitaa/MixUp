@@ -39,8 +39,6 @@
     return instance;
 }
 
-
-
 #pragma mark - init/dealloc
 
 - (id) init {

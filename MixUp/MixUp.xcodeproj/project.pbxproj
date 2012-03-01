@@ -8,6 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		581FC30A14FF116B001B2287 /* UIImage+ContentsOfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */; };
+		581FC32114FF14F2001B2287 /* bee_full.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC30C14FF14F2001B2287 /* bee_full.wav */; };
+		581FC32214FF14F2001B2287 /* bee_part.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC30D14FF14F2001B2287 /* bee_part.wav */; };
+		581FC32314FF14F2001B2287 /* cat_full.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC30E14FF14F2001B2287 /* cat_full.wav */; };
+		581FC32414FF14F2001B2287 /* cat_part.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC30F14FF14F2001B2287 /* cat_part.wav */; };
+		581FC32514FF14F2001B2287 /* dolphin_full.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31014FF14F2001B2287 /* dolphin_full.wav */; };
+		581FC32614FF14F2001B2287 /* dolphin_part.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31114FF14F2001B2287 /* dolphin_part.wav */; };
+		581FC32714FF14F2001B2287 /* good_boy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31214FF14F2001B2287 /* good_boy.wav */; };
+		581FC32814FF14F2001B2287 /* good_job.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31314FF14F2001B2287 /* good_job.wav */; };
+		581FC32914FF14F2001B2287 /* goose_full.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31414FF14F2001B2287 /* goose_full.wav */; };
+		581FC32A14FF14F2001B2287 /* goose_part.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31514FF14F2001B2287 /* goose_part.wav */; };
+		581FC32B14FF14F2001B2287 /* horse_full.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31614FF14F2001B2287 /* horse_full.wav */; };
+		581FC32C14FF14F2001B2287 /* horse_part.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31714FF14F2001B2287 /* horse_part.wav */; };
+		581FC32D14FF14F2001B2287 /* how_it_looks.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31814FF14F2001B2287 /* how_it_looks.wav */; };
+		581FC32E14FF14F2001B2287 /* its_correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31914FF14F2001B2287 /* its_correct.wav */; };
+		581FC32F14FF14F2001B2287 /* its_good.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31A14FF14F2001B2287 /* its_good.wav */; };
+		581FC33014FF14F2001B2287 /* loose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31B14FF14F2001B2287 /* loose.wav */; };
+		581FC33114FF14F2001B2287 /* not_right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31C14FF14F2001B2287 /* not_right.wav */; };
+		581FC33214FF14F2001B2287 /* not_right2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31D14FF14F2001B2287 /* not_right2.wav */; };
+		581FC33314FF14F2001B2287 /* this_is.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31E14FF14F2001B2287 /* this_is.wav */; };
+		581FC33414FF14F2001B2287 /* well_done.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC31F14FF14F2001B2287 /* well_done.wav */; };
+		581FC33514FF14F2001B2287 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC32014FF14F2001B2287 /* win.wav */; };
+		581FC33B14FF1599001B2287 /* AudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 581FC33A14FF1599001B2287 /* AudioManager.m */; };
+		581FC33D14FF15AA001B2287 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581FC33C14FF15AA001B2287 /* AVFoundation.framework */; };
 		582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */; };
 		586D140214FE46AC002A6150 /* animals in Resources */ = {isa = PBXBuildFile; fileRef = 586D140114FE46AC002A6150 /* animals */; };
 		586D140614FE4785002A6150 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 586D140514FE4785002A6150 /* ImageManager.m */; };
@@ -29,6 +52,30 @@
 /* Begin PBXFileReference section */
 		581FC30814FF116B001B2287 /* UIImage+ContentsOfFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ContentsOfFile.h"; sourceTree = "<group>"; };
 		581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ContentsOfFile.m"; sourceTree = "<group>"; };
+		581FC30C14FF14F2001B2287 /* bee_full.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bee_full.wav; sourceTree = "<group>"; };
+		581FC30D14FF14F2001B2287 /* bee_part.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bee_part.wav; sourceTree = "<group>"; };
+		581FC30E14FF14F2001B2287 /* cat_full.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat_full.wav; sourceTree = "<group>"; };
+		581FC30F14FF14F2001B2287 /* cat_part.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat_part.wav; sourceTree = "<group>"; };
+		581FC31014FF14F2001B2287 /* dolphin_full.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dolphin_full.wav; sourceTree = "<group>"; };
+		581FC31114FF14F2001B2287 /* dolphin_part.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dolphin_part.wav; sourceTree = "<group>"; };
+		581FC31214FF14F2001B2287 /* good_boy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = good_boy.wav; sourceTree = "<group>"; };
+		581FC31314FF14F2001B2287 /* good_job.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = good_job.wav; sourceTree = "<group>"; };
+		581FC31414FF14F2001B2287 /* goose_full.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = goose_full.wav; sourceTree = "<group>"; };
+		581FC31514FF14F2001B2287 /* goose_part.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = goose_part.wav; sourceTree = "<group>"; };
+		581FC31614FF14F2001B2287 /* horse_full.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = horse_full.wav; sourceTree = "<group>"; };
+		581FC31714FF14F2001B2287 /* horse_part.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = horse_part.wav; sourceTree = "<group>"; };
+		581FC31814FF14F2001B2287 /* how_it_looks.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = how_it_looks.wav; sourceTree = "<group>"; };
+		581FC31914FF14F2001B2287 /* its_correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = its_correct.wav; sourceTree = "<group>"; };
+		581FC31A14FF14F2001B2287 /* its_good.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = its_good.wav; sourceTree = "<group>"; };
+		581FC31B14FF14F2001B2287 /* loose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = loose.wav; sourceTree = "<group>"; };
+		581FC31C14FF14F2001B2287 /* not_right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = not_right.wav; sourceTree = "<group>"; };
+		581FC31D14FF14F2001B2287 /* not_right2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = not_right2.wav; sourceTree = "<group>"; };
+		581FC31E14FF14F2001B2287 /* this_is.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = this_is.wav; sourceTree = "<group>"; };
+		581FC31F14FF14F2001B2287 /* well_done.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = well_done.wav; sourceTree = "<group>"; };
+		581FC32014FF14F2001B2287 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		581FC33914FF1599001B2287 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
+		581FC33A14FF1599001B2287 /* AudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioManager.m; sourceTree = "<group>"; };
+		581FC33C14FF15AA001B2287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollView.h; sourceTree = "<group>"; };
 		582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollView.m; sourceTree = "<group>"; };
 		586D140114FE46AC002A6150 /* animals */ = {isa = PBXFileReference; lastKnownFileType = folder; path = animals; sourceTree = "<group>"; };
@@ -60,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581FC33D14FF15AA001B2287 /* AVFoundation.framework in Frameworks */,
 				587003ED14F7748E00A727B8 /* UIKit.framework in Frameworks */,
 				587003EF14F7748E00A727B8 /* Foundation.framework in Frameworks */,
 				587003F114F7748E00A727B8 /* CoreGraphics.framework in Frameworks */,
@@ -78,11 +126,41 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		581FC30B14FF14F2001B2287 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				581FC30C14FF14F2001B2287 /* bee_full.wav */,
+				581FC30D14FF14F2001B2287 /* bee_part.wav */,
+				581FC30E14FF14F2001B2287 /* cat_full.wav */,
+				581FC30F14FF14F2001B2287 /* cat_part.wav */,
+				581FC31014FF14F2001B2287 /* dolphin_full.wav */,
+				581FC31114FF14F2001B2287 /* dolphin_part.wav */,
+				581FC31214FF14F2001B2287 /* good_boy.wav */,
+				581FC31314FF14F2001B2287 /* good_job.wav */,
+				581FC31414FF14F2001B2287 /* goose_full.wav */,
+				581FC31514FF14F2001B2287 /* goose_part.wav */,
+				581FC31614FF14F2001B2287 /* horse_full.wav */,
+				581FC31714FF14F2001B2287 /* horse_part.wav */,
+				581FC31814FF14F2001B2287 /* how_it_looks.wav */,
+				581FC31914FF14F2001B2287 /* its_correct.wav */,
+				581FC31A14FF14F2001B2287 /* its_good.wav */,
+				581FC31B14FF14F2001B2287 /* loose.wav */,
+				581FC31C14FF14F2001B2287 /* not_right.wav */,
+				581FC31D14FF14F2001B2287 /* not_right2.wav */,
+				581FC31E14FF14F2001B2287 /* this_is.wav */,
+				581FC31F14FF14F2001B2287 /* well_done.wav */,
+				581FC32014FF14F2001B2287 /* win.wav */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		586D140314FE475A002A6150 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				586D140414FE4785002A6150 /* ImageManager.h */,
 				586D140514FE4785002A6150 /* ImageManager.m */,
+				581FC33914FF1599001B2287 /* AudioManager.h */,
+				581FC33A14FF1599001B2287 /* AudioManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +185,7 @@
 		587003EB14F7748E00A727B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				581FC33C14FF15AA001B2287 /* AVFoundation.framework */,
 				587003EC14F7748E00A727B8 /* UIKit.framework */,
 				587003EE14F7748E00A727B8 /* Foundation.framework */,
 				587003F014F7748E00A727B8 /* CoreGraphics.framework */,
@@ -167,6 +246,7 @@
 		5870040914F7774400A727B8 /* ru.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				581FC30B14FF14F2001B2287 /* sounds */,
 				5870040A14F7774400A727B8 /* buttons */,
 			);
 			path = ru.lproj;
@@ -232,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
-				ORGANIZATIONNAME = "Al Digit";
+				ORGANIZATIONNAME = "Mix Up";
 			};
 			buildConfigurationList = 587003E214F7748D00A727B8 /* Build configuration list for PBXProject "MixUp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -263,6 +343,27 @@
 				5870041614F7774400A727B8 /* who_am_i_button_normal.png in Resources */,
 				5870041714F7774400A727B8 /* who_am_i_button_selected.png in Resources */,
 				586D140214FE46AC002A6150 /* animals in Resources */,
+				581FC32114FF14F2001B2287 /* bee_full.wav in Resources */,
+				581FC32214FF14F2001B2287 /* bee_part.wav in Resources */,
+				581FC32314FF14F2001B2287 /* cat_full.wav in Resources */,
+				581FC32414FF14F2001B2287 /* cat_part.wav in Resources */,
+				581FC32514FF14F2001B2287 /* dolphin_full.wav in Resources */,
+				581FC32614FF14F2001B2287 /* dolphin_part.wav in Resources */,
+				581FC32714FF14F2001B2287 /* good_boy.wav in Resources */,
+				581FC32814FF14F2001B2287 /* good_job.wav in Resources */,
+				581FC32914FF14F2001B2287 /* goose_full.wav in Resources */,
+				581FC32A14FF14F2001B2287 /* goose_part.wav in Resources */,
+				581FC32B14FF14F2001B2287 /* horse_full.wav in Resources */,
+				581FC32C14FF14F2001B2287 /* horse_part.wav in Resources */,
+				581FC32D14FF14F2001B2287 /* how_it_looks.wav in Resources */,
+				581FC32E14FF14F2001B2287 /* its_correct.wav in Resources */,
+				581FC32F14FF14F2001B2287 /* its_good.wav in Resources */,
+				581FC33014FF14F2001B2287 /* loose.wav in Resources */,
+				581FC33114FF14F2001B2287 /* not_right.wav in Resources */,
+				581FC33214FF14F2001B2287 /* not_right2.wav in Resources */,
+				581FC33314FF14F2001B2287 /* this_is.wav in Resources */,
+				581FC33414FF14F2001B2287 /* well_done.wav in Resources */,
+				581FC33514FF14F2001B2287 /* win.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +381,7 @@
 				582F52C914FCF36400CB27A1 /* InfiniteScrollView.m in Sources */,
 				586D140614FE4785002A6150 /* ImageManager.m in Sources */,
 				581FC30A14FF116B001B2287 /* UIImage+ContentsOfFile.m in Sources */,
+				581FC33B14FF1599001B2287 /* AudioManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
