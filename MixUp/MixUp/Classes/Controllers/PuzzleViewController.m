@@ -78,6 +78,7 @@
     }
     else {
         [currentPuzzle release];
+        currentLevel = arc4random() % 3 + 1;
         currentPuzzle = [[Puzzle alloc] initWithLevel:currentLevel];
         [[AudioManager sharedManager] playNextPuzzleSoundsFromAnimalWithState:[currentPuzzle gameState]];
     }
