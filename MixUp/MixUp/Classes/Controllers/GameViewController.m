@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "AudioManager.h"
+#import "GameState.h"
 
 @implementation GameViewController
 
@@ -44,8 +45,8 @@
 }
 
 #pragma mark - game view delegate
-- (void)gameView:(GameView *)gameView whoAmIPressedWithAnimals:(NSArray *)animals {
-    [[AudioManager sharedManager] playSoundsForAnimalWithNames:animals];
+- (void)gameView:(GameView *)gameView whoAmIPressedWithAnimalsState:(GameState *)animals {
+    [[AudioManager sharedManager] playSoundsForAnimalWithState:animals];
 }
 
 - (void)gameViewBackButtonPressed:(GameView *)gameView {

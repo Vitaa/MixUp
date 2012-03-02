@@ -9,16 +9,18 @@
 #import "AudioManager.h"
 
 @interface AudioManager ()
-- (NSArray*)soundNamesForAnimals:(NSArray*)names;
+- (NSArray*)soundNamesForAnimalsState:(GameState*)state;
 - (void)playNextSound;
 
 @property (nonatomic, retain) NSArray   * sounds;
 @property (nonatomic, assign) NSInteger currentSound;
+@property (nonatomic, retain) NSArray   * winSounds;
+@property (nonatomic, retain) NSArray   * loseSounds;
 @end
 
 @implementation AudioManager
 
-@synthesize sounds, currentSound;
+@synthesize sounds, winSounds, loseSounds, currentSound;
 
 #pragma mark - singleton
 
@@ -35,18 +37,61 @@
 #pragma mark - init/dealloc
 - (id) init {
     if ((self=[super init])) {
+        winSounds  = [[NSArray alloc] initWithObjects:@"good_boy", @"good_job", @"its_correct", @"its_good", @"well_done", nil];
+        loseSounds = [[NSArray alloc] initWithObjects:@"not_right", @"not_right2", nil]; 
     }
     return self;
 }
 
+- (void)dealloc {
+    [sounds release];
+    [winSounds release];
+    [loseSounds release];
+    [super dealloc];
+}
+
 #pragma mark - public
-- (void)playSoundsForAnimalWithNames:(NSArray*)names {
-    NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimals:names]];
+- (void)playSoundsForAnimalWithState:(GameState*)state {
+    NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimalsState:state]];
     [sounds_ insertObject:@"this_is" atIndex:0];
     self.sounds = sounds_;
     self.currentSound = 0;
     if (player && [player isPlaying])
         [player stop];
+    [self playNextSound];
+}
+
+- (void)playPuzzleSoundsFromAnimalWithState:(GameState*)state {
+    NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimalsState:state]];
+    [sounds_ insertObject:@"how_it_looks" atIndex:0];
+    self.sounds = sounds_;
+    self.currentSound = 0;
+    if (player && [player isPlaying])
+        [player stop];
+    [self playNextSound];
+}
+
+- (void)playNextPuzzleSoundsFromAnimalWithState:(GameState*)state {
+    NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimalsState:state]];
+    NSInteger winSound = arc4random() % [winSounds count];
+    [sounds_ insertObject:[winSounds objectAtIndex:winSound] atIndex:0];
+    [sounds_ insertObject:@"how_it_looks" atIndex:1];
+    self.sounds = sounds_;
+    self.currentSound = 0;
+    if (player && [player isPlaying])
+        [player stop];
+    [self playNextSound];
+}
+
+- (void)playNotCorrectSound:(GameState*)state {
+    if (player && [player isPlaying])
+        return;
+    NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimalsState:state]];
+    NSInteger loseSound = arc4random() % [loseSounds count];
+    [sounds_ insertObject:[loseSounds objectAtIndex:loseSound] atIndex:0];
+    [sounds_ insertObject:@"how_it_looks" atIndex:1];
+    self.sounds = sounds_;
+    self.currentSound = 0;
     [self playNextSound];
 }
 
@@ -73,10 +118,10 @@
     }
 }
  
-- (NSArray*)soundNamesForAnimals:(NSArray*)names {
-    NSString* topAnimal    = [names objectAtIndex:0];
-    NSString* middleAnimal = [names objectAtIndex:1];
-    NSString* bottomAnimal = [names objectAtIndex:2];
+- (NSArray*)soundNamesForAnimalsState:(GameState*)state {
+    NSString* topAnimal    = state.topAnimal;
+    NSString* middleAnimal = state.middleAnimal;
+    NSString* bottomAnimal = state.bottomAnimal;
     
     if ([topAnimal isEqualToString:middleAnimal]) {
         if ([topAnimal isEqualToString:bottomAnimal]) {

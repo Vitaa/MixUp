@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580B8E4615005311001B38ED /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580B8E4515005311001B38ED /* PuzzleViewController.m */; };
+		580B8E4A1500532D001B38ED /* PuzzleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580B8E491500532D001B38ED /* PuzzleView.m */; };
+		580B8E4D1500558D001B38ED /* Puzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 580B8E4C1500558D001B38ED /* Puzzle.m */; };
+		580B8E5015005731001B38ED /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 580B8E4F15005731001B38ED /* GameState.m */; };
 		581FC30A14FF116B001B2287 /* UIImage+ContentsOfFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */; };
 		581FC32114FF14F2001B2287 /* bee_full.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC30C14FF14F2001B2287 /* bee_full.wav */; };
 		581FC32214FF14F2001B2287 /* bee_part.wav in Resources */ = {isa = PBXBuildFile; fileRef = 581FC30D14FF14F2001B2287 /* bee_part.wav */; };
@@ -64,6 +68,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		580B8E4415005311001B38ED /* PuzzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleViewController.h; sourceTree = "<group>"; };
+		580B8E4515005311001B38ED /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleViewController.m; sourceTree = "<group>"; };
+		580B8E481500532D001B38ED /* PuzzleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleView.h; sourceTree = "<group>"; };
+		580B8E491500532D001B38ED /* PuzzleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleView.m; sourceTree = "<group>"; };
+		580B8E4B1500558D001B38ED /* Puzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puzzle.h; sourceTree = "<group>"; };
+		580B8E4C1500558D001B38ED /* Puzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puzzle.m; sourceTree = "<group>"; };
+		580B8E4E15005731001B38ED /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		580B8E4F15005731001B38ED /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
 		581FC30814FF116B001B2287 /* UIImage+ContentsOfFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ContentsOfFile.h"; sourceTree = "<group>"; };
 		581FC30914FF116B001B2287 /* UIImage+ContentsOfFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ContentsOfFile.m"; sourceTree = "<group>"; };
 		581FC30C14FF14F2001B2287 /* bee_full.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bee_full.wav; sourceTree = "<group>"; };
@@ -217,6 +229,10 @@
 				586D140514FE4785002A6150 /* ImageManager.m */,
 				581FC33914FF1599001B2287 /* AudioManager.h */,
 				581FC33A14FF1599001B2287 /* AudioManager.m */,
+				580B8E4B1500558D001B38ED /* Puzzle.h */,
+				580B8E4C1500558D001B38ED /* Puzzle.m */,
+				580B8E4E15005731001B38ED /* GameState.h */,
+				580B8E4F15005731001B38ED /* GameState.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,10 +343,12 @@
 		5870042114F777A500A727B8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5870042314F7781E00A727B8 /* GameViewController.h */,
-				5870042414F7781E00A727B8 /* GameViewController.m */,
 				581FC34F14FF99BF001B2287 /* MainViewController.h */,
 				581FC35014FF99BF001B2287 /* MainViewController.m */,
+				5870042314F7781E00A727B8 /* GameViewController.h */,
+				5870042414F7781E00A727B8 /* GameViewController.m */,
+				580B8E4415005311001B38ED /* PuzzleViewController.h */,
+				580B8E4515005311001B38ED /* PuzzleViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -338,14 +356,16 @@
 		5870042214F777AE00A727B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				581FC34C14FF99A4001B2287 /* MainView.h */,
+				581FC34D14FF99A4001B2287 /* MainView.m */,
 				5870042614F7783000A727B8 /* AnimalsView.h */,
 				5870042714F7783000A727B8 /* AnimalsView.m */,
 				582F52C714FCF36400CB27A1 /* InfiniteScrollView.h */,
 				582F52C814FCF36400CB27A1 /* InfiniteScrollView.m */,
 				581FC34914FF9231001B2287 /* GameView.h */,
 				581FC34A14FF9231001B2287 /* GameView.m */,
-				581FC34C14FF99A4001B2287 /* MainView.h */,
-				581FC34D14FF99A4001B2287 /* MainView.m */,
+				580B8E481500532D001B38ED /* PuzzleView.h */,
+				580B8E491500532D001B38ED /* PuzzleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +480,10 @@
 				581FC34B14FF9232001B2287 /* GameView.m in Sources */,
 				581FC34E14FF99A5001B2287 /* MainView.m in Sources */,
 				581FC35114FF99BF001B2287 /* MainViewController.m in Sources */,
+				580B8E4615005311001B38ED /* PuzzleViewController.m in Sources */,
+				580B8E4A1500532D001B38ED /* PuzzleView.m in Sources */,
+				580B8E4D1500558D001B38ED /* Puzzle.m in Sources */,
+				580B8E5015005731001B38ED /* GameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

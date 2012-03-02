@@ -1,16 +1,15 @@
 //
-//  GameView.m
+//  PuzzleView.m
 //  MixUp
 //
-//  Created by Vita on 3/1/12.
+//  Created by Vita on 3/2/12.
 //  Copyright (c) 2012 Mix Up. All rights reserved.
 //
 
-#import "GameView.h"
+#import "PuzzleView.h"
 #import "AnimalsView.h"
 
-
-@implementation GameView
+@implementation PuzzleView
 
 @synthesize delegate;
 
@@ -21,11 +20,11 @@
         animalsView = [[[AnimalsView alloc] init] autorelease];
         [self addSubview:animalsView];
         
-        UIImage * whoAmIImg = [UIImage imageNamed:@"who_am_i_button_normal.png"];
-        whoAmIBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, whoAmIImg.size.width, whoAmIImg.size.height)] autorelease];
-        [whoAmIBtn setBackgroundImage:whoAmIImg forState:UIControlStateNormal];
-        [whoAmIBtn addTarget:self action:@selector(whoAmI:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:whoAmIBtn];
+        UIImage * checkImg = [UIImage imageNamed:@"check_button_normal.png"];
+        checkBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, checkImg.size.width, checkImg.size.height)] autorelease];
+        [checkBtn setBackgroundImage:checkImg forState:UIControlStateNormal];
+        [checkBtn addTarget:self action:@selector(onCheck:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:checkBtn];
         
         UIImage * backImg = [UIImage imageNamed:@"back.png"];
         backBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, backImg.size.width, backImg.size.height)] autorelease];
@@ -36,15 +35,19 @@
     return self;
 }
 
+- (void)initSuffle {
+    [animalsView suffleAnimated:YES];
+}
+
 -(void)layoutSubviews {
     [super layoutSubviews];
     
     animalsView.frame = CGRectMake(0.0, 0.0, self.frame.size.width, self.frame.size.height);
     
-    CGRect btnFrame = whoAmIBtn.frame;
+    CGRect btnFrame = checkBtn.frame;
     btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
     btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
-    whoAmIBtn.frame = btnFrame;
+    checkBtn.frame = btnFrame;
     
     CGRect backFrame = backBtn.frame;
     backFrame.origin.x = 10.0;
@@ -52,14 +55,15 @@
     backBtn.frame = backFrame;
 }
 
-- (void)whoAmI:(id)sender {
-    if ([delegate respondsToSelector:@selector(gameView:whoAmIPressedWithAnimalsState:)])
-        [delegate gameView:self whoAmIPressedWithAnimalsState:[animalsView currentAnimalsState]];
+- (void)onCheck:(id)sender {
+    if ([delegate respondsToSelector:@selector(puzzleView:checkPressedWithAnimalsState:)])
+        [delegate puzzleView:self checkPressedWithAnimalsState:[animalsView currentAnimalsState]];
 }
 
 - (void)onBack:(id)sender {
-    if ([delegate respondsToSelector:@selector(gameViewBackButtonPressed:)])
-        [delegate gameViewBackButtonPressed:self];
+    if ([delegate respondsToSelector:@selector(puzzleViewBackButtonPressed:)])
+        [delegate puzzleViewBackButtonPressed:self];
 }
+
 
 @end

@@ -116,6 +116,10 @@
     return [fileName substringToIndex:_loc];
 }
 
+- (NSInteger)animalCount {
+    return [feetImagePaths count];
+}
+
 #pragma  mark - private
 - (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix fullPath:(NSString*)fullPath {
     NSArray * heads = [animals filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"self contains[c] %@ AND not self contains[c] '~iphone'", prefix]];

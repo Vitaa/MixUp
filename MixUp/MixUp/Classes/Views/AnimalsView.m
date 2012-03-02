@@ -48,7 +48,7 @@
 }
 
 
-- (NSArray*)currentAnimals {
+- (GameState*)currentAnimalsState {
     NSInteger topAnimal    = [self decodeCurrentIndex:[headsScrollView currentImageIndex]];
     NSInteger middleAnimal = [self decodeCurrentIndex:[bodiesScrollView currentImageIndex]];
     NSInteger bottomAnimal = [self decodeCurrentIndex:[feetScrollView currentImageIndex]];
@@ -57,7 +57,19 @@
     NSString* middleAnimalName = [[ImageManager sharedManager] animalNameForIndex:middleAnimal];
     NSString* bottomAnimalName = [[ImageManager sharedManager] animalNameForIndex:bottomAnimal];
     
-    return [NSArray arrayWithObjects:topAnimalName, middleAnimalName, bottomAnimalName, nil];
+    GameState * state = [GameState new];
+    state.topAnimal = topAnimalName;
+    state.middleAnimal = middleAnimalName;
+    state.bottomAnimal = bottomAnimalName;
+    
+    return [state autorelease];
+}
+
+- (void)suffleAnimated:(BOOL)animated {
+    NSInteger count = [[ImageManager sharedManager] animalCount];
+    [headsScrollView scrollToPage:arc4random() % count animated:animated];
+    [bodiesScrollView scrollToPage:arc4random() % count animated:animated];
+    [feetScrollView scrollToPage:arc4random() % count animated:animated];
 }
 
 #pragma mark - private

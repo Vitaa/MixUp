@@ -28,6 +28,7 @@
     UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:mainController];
     nc.navigationBarHidden = YES;
     self.window.rootViewController = nc;
+    self.window.backgroundColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     [self.window makeKeyAndVisible];
     return YES;
 }

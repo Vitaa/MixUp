@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "GameViewController.h"
+#import "PuzzleViewController.h"
 
 @implementation MainViewController
 
@@ -51,7 +52,9 @@
 }
 
 - (void)mainViewCombineButtonPressed:(MainView *)mainView {
-    
+    PuzzleViewController * puzzleController = [[[PuzzleViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:puzzleController animated:YES];
+
 }
 
 - (void)mainViewAboutButtonPressed:(MainView *)mainView {

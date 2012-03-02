@@ -15,5 +15,6 @@
 
 - (void)displayImages:(NSArray*)images;
 - (NSInteger)currentImageIndex;
+- (void)scrollToPage:(NSInteger)page animated:(BOOL)animated;
 
 @end

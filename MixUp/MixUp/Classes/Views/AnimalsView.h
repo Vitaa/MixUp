@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameState.h"
+
 @class InfiniteScrollView;
 
 @interface AnimalsView : UIView {
@@ -15,6 +17,7 @@
     InfiniteScrollView * feetScrollView;
 }
 
-- (NSArray*)currentAnimals;
+- (GameState*)currentAnimalsState;
+- (void)suffleAnimated:(BOOL)animated;
 
 @end

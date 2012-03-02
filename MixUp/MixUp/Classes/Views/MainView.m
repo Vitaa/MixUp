@@ -15,9 +15,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-        
+    if (self) {      
         UIImage * combineImg = [UIImage imageNamed:@"combine_button_normal.png"];
         
         combineButton = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, combineImg.size.width, combineImg.size.height)] autorelease];
@@ -52,8 +50,8 @@
     
     CGSize btnSize = combineButton.frame.size;
     guessButton.frame = CGRectMake((width-btnSize.width)/2, topLogo.frame.size.height+topLogo.frame.origin.y+30.0, btnSize.width, btnSize.height);
-    combineButton.frame = CGRectMake((width-btnSize.width)/2, combineButton.frame.origin.y + combineButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
-    aboutButton.frame = CGRectMake((width-btnSize.width)/2, guessButton.frame.origin.y + guessButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
+    combineButton.frame = CGRectMake((width-btnSize.width)/2, guessButton.frame.origin.y + guessButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
+    aboutButton.frame = CGRectMake((width-btnSize.width)/2, combineButton.frame.origin.y + combineButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
 }
 
 - (void)onCombine:(id)sender {

@@ -39,6 +39,10 @@
     return self.contentOffset.x / self.frame.size.width;
 }
 
+- (void)scrollToPage:(NSInteger)page animated:(BOOL)animated {
+    [self setContentOffset:CGPointMake(page*self.frame.size.width, 0) animated:animated];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -54,7 +58,7 @@
         }
     }
     
-    self.contentSize = CGSizeMake(xOffset+width, self.frame.size.height);
+    self.contentSize = CGSizeMake(xOffset, self.frame.size.height);
 }
 
 

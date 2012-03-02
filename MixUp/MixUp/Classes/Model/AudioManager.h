@@ -7,6 +7,7 @@
 //
 
 #import "AVFoundation/AVFoundation.h"
+#import "GameState.h"
 
 @interface AudioManager : NSObject <AVAudioPlayerDelegate>
 {
@@ -15,6 +16,9 @@
 
 + (AudioManager*)sharedManager;
 
-- (void)playSoundsForAnimalWithNames:(NSArray*)names;
+- (void)playSoundsForAnimalWithState:(GameState*)state;
+- (void)playPuzzleSoundsFromAnimalWithState:(GameState*)state;
+- (void)playNextPuzzleSoundsFromAnimalWithState:(GameState*)state;
+- (void)playNotCorrectSound:(GameState*)state;
 
 @end

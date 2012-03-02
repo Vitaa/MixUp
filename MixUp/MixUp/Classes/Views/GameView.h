@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameState.h"
 
 @class AnimalsView;
 @class GameView;
@@ -14,7 +15,7 @@
 @protocol GameViewProtocol <NSObject>
 
 @optional
-- (void)gameView:(GameView*)gameView whoAmIPressedWithAnimals:(NSArray*)animals;
+- (void)gameView:(GameView*)gameView whoAmIPressedWithAnimalsState:(GameState*)animals;
 - (void)gameViewBackButtonPressed:(GameView*)gameView;
 
 @end

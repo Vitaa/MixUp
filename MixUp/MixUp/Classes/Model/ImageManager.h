@@ -21,5 +21,6 @@
 - (CGFloat)feetImageHeight;
 
 - (NSString*)animalNameForIndex:(NSInteger)index;
+- (NSInteger)animalCount;
 
 @end
