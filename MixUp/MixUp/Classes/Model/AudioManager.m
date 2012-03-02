@@ -11,6 +11,7 @@
 @interface AudioManager ()
 - (NSArray*)soundNamesForAnimalsState:(GameState*)state;
 - (void)playNextSound;
+- (NSURL*)urlForSoundName:(NSString*)name;
 
 @property (nonatomic, retain) NSArray   * sounds;
 @property (nonatomic, assign) NSInteger currentSound;
@@ -51,6 +52,12 @@
 }
 
 #pragma mark - public
+- (void)prepare {
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:[self urlForSoundName:[winSounds objectAtIndex:0]] error:nil];
+    [player prepareToPlay];
+}
+
+
 - (void)playSoundsForAnimalWithState:(GameState*)state {
     NSMutableArray * sounds_ = [NSMutableArray arrayWithArray:[self soundNamesForAnimalsState:state]];
     [sounds_ insertObject:@"this_is" atIndex:0];

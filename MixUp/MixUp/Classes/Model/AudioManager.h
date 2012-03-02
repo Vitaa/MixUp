@@ -21,4 +21,6 @@
 - (void)playNextPuzzleSoundsFromAnimalWithState:(GameState*)state;
 - (void)playNotCorrectSound:(GameState*)state;
 
+- (void)prepare;
+
 @end

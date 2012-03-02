@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
+#import "AudioManager.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -17,6 +19,12 @@
 {
     [_window release];
     [super dealloc];
+}
+
+- (void)initPlayer {
+    @autoreleasepool {
+        [[AudioManager sharedManager] prepare];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -30,6 +38,9 @@
     self.window.rootViewController = nc;
     self.window.backgroundColor =  [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     [self.window makeKeyAndVisible];
+    
+    [self performSelectorInBackground:@selector(initPlayer) withObject:nil];
+    
     return YES;
 }
 
