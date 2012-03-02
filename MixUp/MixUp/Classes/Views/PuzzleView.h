@@ -24,9 +24,11 @@
     AnimalsView * animalsView;
     UIButton * checkBtn;
     UIButton * backBtn;
+    UILabel  * timer;
 }
 
 - (void)initSuffle;
+- (void)setTime:(NSString*)time;
 
 @property (nonatomic, assign) id <PuzzleViewProtocol> delegate;
 

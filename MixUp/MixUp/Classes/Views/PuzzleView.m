@@ -31,12 +31,24 @@
         [backBtn setBackgroundImage:backImg forState:UIControlStateNormal];
         [backBtn addTarget:self action:@selector(onBack:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:backBtn];
+        
+        timer = [[UILabel alloc] initWithFrame:CGRectZero];
+        timer.backgroundColor = [UIColor clearColor];
+        timer.textColor = [UIColor darkGrayColor];
+        timer.font = [UIFont systemFontOfSize:18.0];
+        timer.textAlignment = UITextAlignmentRight;
+        timer.text = @"5:00";
+        [self addSubview:timer];
     }
     return self;
 }
 
 - (void)initSuffle {
     [animalsView suffleAnimated:YES];
+}
+
+- (void)setTime:(NSString*)time {
+    timer.text = time;
 }
 
 -(void)layoutSubviews {
@@ -53,6 +65,8 @@
     backFrame.origin.x = 10.0;
     backFrame.origin.y = 10.0;
     backBtn.frame = backFrame;
+    
+    timer.frame = CGRectMake(0.0, 10.0, self.frame.size.width-10.0, 20.0);
 }
 
 - (void)onCheck:(id)sender {
