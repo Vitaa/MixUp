@@ -46,11 +46,12 @@
 
 #pragma mark - main view delegate
 - (void)mainViewGuessButtonPressed:(MainView*)mainView {
+    GameViewController * gameController = [[[GameViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:gameController animated:YES];
 }
 
 - (void)mainViewCombineButtonPressed:(MainView *)mainView {
-    GameViewController * gameController = [[[GameViewController alloc] init] autorelease];
-    [self.navigationController pushViewController:gameController animated:YES];
+    
 }
 
 - (void)mainViewAboutButtonPressed:(MainView *)mainView {

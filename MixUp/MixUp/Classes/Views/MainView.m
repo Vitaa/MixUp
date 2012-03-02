@@ -51,8 +51,8 @@
     bottomLogo.frame = CGRectMake(0.0, self.frame.size.height-bottomLogo.frame.size.height, bottomLogo.frame.size.width, bottomLogo.frame.size.height);
     
     CGSize btnSize = combineButton.frame.size;
-    combineButton.frame = CGRectMake((width-btnSize.width)/2, topLogo.frame.size.height+topLogo.frame.origin.y+30.0, btnSize.width, btnSize.height);
-    guessButton.frame = CGRectMake((width-btnSize.width)/2, combineButton.frame.origin.y + combineButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
+    guessButton.frame = CGRectMake((width-btnSize.width)/2, topLogo.frame.size.height+topLogo.frame.origin.y+30.0, btnSize.width, btnSize.height);
+    combineButton.frame = CGRectMake((width-btnSize.width)/2, combineButton.frame.origin.y + combineButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
     aboutButton.frame = CGRectMake((width-btnSize.width)/2, guessButton.frame.origin.y + guessButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
 }
 
