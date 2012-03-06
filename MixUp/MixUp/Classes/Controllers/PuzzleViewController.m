@@ -90,7 +90,8 @@ static int levels[kLevelsCount][2] = {
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [(PuzzleView*)self.view initSuffle];
+
+    [(PuzzleView*)self.view initShuffle];
     
     currentLevel = 0;
     

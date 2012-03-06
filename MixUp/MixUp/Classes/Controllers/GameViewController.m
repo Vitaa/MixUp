@@ -38,6 +38,20 @@
     [super viewDidLoad];
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [(GameView*)self.view initialize];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -51,6 +65,21 @@
 
 - (void)gameViewBackButtonPressed:(GameView *)gameView {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - shake
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    [(GameView*)self.view shuffleAnimated:YES];
+}
+
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
 }
 
 @end

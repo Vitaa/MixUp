@@ -65,11 +65,17 @@
     return [state autorelease];
 }
 
-- (void)suffleAnimated:(BOOL)animated {
+- (void)shuffleAnimated:(BOOL)animated {
     NSInteger count = [[ImageManager sharedManager] animalCount];
     [headsScrollView scrollToPage:arc4random() % count animated:animated];
     [bodiesScrollView scrollToPage:arc4random() % count animated:animated];
     [feetScrollView scrollToPage:arc4random() % count animated:animated];
+}
+
+- (void)initialize {
+    [headsScrollView scrollToPage:1 animated:NO];
+    [bodiesScrollView scrollToPage:1 animated:NO];
+    [feetScrollView scrollToPage:1 animated:NO];
 }
 
 #pragma mark - private

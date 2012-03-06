@@ -18,6 +18,7 @@
 }
 
 - (GameState*)currentAnimalsState;
-- (void)suffleAnimated:(BOOL)animated;
+- (void)shuffleAnimated:(BOOL)animated;
+- (void)initialize;
 
 @end

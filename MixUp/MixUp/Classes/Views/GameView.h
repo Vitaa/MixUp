@@ -26,6 +26,9 @@
     UIButton * whoAmIBtn;
 }
 
+- (void)shuffleAnimated:(BOOL)animated;
+- (void)initialize;
+
 @property (nonatomic, assign) id <GameViewProtocol> delegate;
 
 @end

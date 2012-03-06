@@ -53,4 +53,12 @@
         [delegate gameViewBackButtonPressed:self];
 }
 
+- (void)shuffleAnimated:(BOOL)animated {
+    [animalsView shuffleAnimated:animated];
+}
+
+- (void)initialize {
+    [animalsView initialize];
+}
+
 @end

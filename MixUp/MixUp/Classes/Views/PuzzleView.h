@@ -28,8 +28,9 @@
     UILabel  * timer;
 }
 
-- (void)initSuffle;
+- (void)initShuffle;
 - (void)setTime:(NSString*)time;
+- (void)initialize;
 
 @property (nonatomic, assign) id <PuzzleViewProtocol> delegate;
 

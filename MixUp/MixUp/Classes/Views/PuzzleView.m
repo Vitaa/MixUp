@@ -41,8 +41,12 @@
     return self;
 }
 
-- (void)initSuffle {
-    [animalsView suffleAnimated:YES];
+- (void)initShuffle {
+    [animalsView shuffleAnimated:YES];
+}
+
+- (void)initialize {
+    [animalsView initialize];
 }
 
 - (void)setTime:(NSString*)time {
