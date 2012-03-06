@@ -23,8 +23,12 @@
 - (BOOL)isEqualToState:(GameState *)state {
     if (self == state)
         return YES;
-    if ([topAnimal isEqualToString:state.topAnimal] && [middleAnimal isEqualToString:state.middleAnimal] && [bottomAnimal isEqualToString:state.bottomAnimal])
-        return YES;
+    if ([middleAnimal isEqualToString:topAnimal] || [middleAnimal isEqualToString:bottomAnimal]) {
+        return [topAnimal isEqualToString:state.topAnimal] && [bottomAnimal isEqualToString:state.bottomAnimal] && ([topAnimal isEqualToString:state.middleAnimal] || [bottomAnimal isEqualToString:state.middleAnimal]);
+    }
+    else 
+        return ([topAnimal isEqualToString:state.topAnimal] && [middleAnimal isEqualToString:state.middleAnimal] && [bottomAnimal isEqualToString:state.bottomAnimal]);
+
     return NO;
 }
 
@@ -35,7 +39,5 @@
         return NO;
     return [self isEqualToState:other];
 }
-
-
 
 @end

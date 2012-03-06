@@ -102,6 +102,22 @@
     [self playNextSound];
 }
 
+- (void)playTimeoutSound {
+    if (player && [player isPlaying])
+        [player stop];
+    self.sounds = [NSArray arrayWithObject:@"loose"];
+    self.currentSound = 0;
+    [self playNextSound];
+}
+
+- (void)playWinSound {
+    if (player && [player isPlaying])
+        [player stop];
+    self.sounds = [NSArray arrayWithObject:@"win"];
+    self.currentSound = 0;
+    [self playNextSound];
+}
+
 #pragma mark - AudioPlayer Delegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     currentSound++;

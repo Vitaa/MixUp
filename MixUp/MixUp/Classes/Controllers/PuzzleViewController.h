@@ -10,8 +10,11 @@
 #import "PuzzleView.h"
 #import "Puzzle.h"
 
-@interface PuzzleViewController : UIViewController <PuzzleViewProtocol> {
+@interface PuzzleViewController : UIViewController <PuzzleViewProtocol, UIAlertViewDelegate> {
     Puzzle * currentPuzzle;
     NSInteger currentLevel;
+
+    NSTimer * timer;
+    NSInteger startTime;
 }
 @end

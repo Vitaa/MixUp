@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GameState.h"
+#import "AbsractView.h"
 
 @class AnimalsView;
 @class GameView;
@@ -20,10 +21,9 @@
 
 @end
 
-@interface GameView : UIView {
+@interface GameView : AbsractView {
     AnimalsView * animalsView;
     UIButton * whoAmIBtn;
-    UIButton * backBtn;
 }
 
 @property (nonatomic, assign) id <GameViewProtocol> delegate;

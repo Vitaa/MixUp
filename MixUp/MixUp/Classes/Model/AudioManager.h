@@ -20,6 +20,8 @@
 - (void)playPuzzleSoundsFromAnimalWithState:(GameState*)state;
 - (void)playNextPuzzleSoundsFromAnimalWithState:(GameState*)state;
 - (void)playNotCorrectSound:(GameState*)state;
+- (void)playTimeoutSound;
+- (void)playWinSound;
 
 - (void)prepare;
 

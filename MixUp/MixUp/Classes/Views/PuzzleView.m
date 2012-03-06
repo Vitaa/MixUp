@@ -26,19 +26,17 @@
         [checkBtn addTarget:self action:@selector(onCheck:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:checkBtn];
         
-        UIImage * backImg = [UIImage imageNamed:@"back.png"];
-        backBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, backImg.size.width, backImg.size.height)] autorelease];
-        [backBtn setBackgroundImage:backImg forState:UIControlStateNormal];
-        [backBtn addTarget:self action:@selector(onBack:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:backBtn];
-        
         timer = [[UILabel alloc] initWithFrame:CGRectZero];
         timer.backgroundColor = [UIColor clearColor];
-        timer.textColor = [UIColor darkGrayColor];
-        timer.font = [UIFont systemFontOfSize:18.0];
+        timer.textColor = [UIColor whiteColor];
+        timer.font = [UIFont systemFontOfSize:20.0];
+        timer.shadowColor = [UIColor darkGrayColor];
+        timer.shadowOffset = CGSizeMake(1.0, 1.0); 
         timer.textAlignment = UITextAlignmentRight;
         timer.text = @"5:00";
         [self addSubview:timer];
+        
+        [self bringSubviewToFront:backBtn];
     }
     return self;
 }
@@ -60,11 +58,6 @@
     btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
     btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
     checkBtn.frame = btnFrame;
-    
-    CGRect backFrame = backBtn.frame;
-    backFrame.origin.x = 10.0;
-    backFrame.origin.y = 10.0;
-    backBtn.frame = backFrame;
     
     timer.frame = CGRectMake(0.0, 10.0, self.frame.size.width-10.0, 20.0);
 }

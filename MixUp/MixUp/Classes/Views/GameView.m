@@ -27,11 +27,7 @@
         [whoAmIBtn addTarget:self action:@selector(whoAmI:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:whoAmIBtn];
         
-        UIImage * backImg = [UIImage imageNamed:@"back.png"];
-        backBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, backImg.size.width, backImg.size.height)] autorelease];
-        [backBtn setBackgroundImage:backImg forState:UIControlStateNormal];
-        [backBtn addTarget:self action:@selector(onBack:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:backBtn];
+        [self bringSubviewToFront:backBtn];
     }
     return self;
 }
@@ -45,11 +41,6 @@
     btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
     btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
     whoAmIBtn.frame = btnFrame;
-    
-    CGRect backFrame = backBtn.frame;
-    backFrame.origin.x = 10.0;
-    backFrame.origin.y = 10.0;
-    backBtn.frame = backFrame;
 }
 
 - (void)whoAmI:(id)sender {

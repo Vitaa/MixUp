@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GameState.h"
+#import "AbsractView.h"
 
 @class AnimalsView;
 @class PuzzleView;
@@ -20,10 +21,10 @@
 
 @end
 
-@interface PuzzleView : UIView {
+@interface PuzzleView : AbsractView {
     AnimalsView * animalsView;
     UIButton * checkBtn;
-    UIButton * backBtn;
+
     UILabel  * timer;
 }
 

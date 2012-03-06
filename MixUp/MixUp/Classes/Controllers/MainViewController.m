@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "GameViewController.h"
 #import "PuzzleViewController.h"
+#import "AboutViewController.h"
 
 @implementation MainViewController
 
@@ -38,6 +39,12 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -58,6 +65,8 @@
 }
 
 - (void)mainViewAboutButtonPressed:(MainView *)mainView {
+    AboutViewController * aboutController = [[[AboutViewController alloc] init] autorelease];
+    [self.navigationController pushViewController:aboutController animated:YES];
 }
 
 @end
