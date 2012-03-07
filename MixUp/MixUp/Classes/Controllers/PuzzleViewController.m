@@ -80,6 +80,10 @@ static int levels[kLevelsCount][2] = {
     }
     else {
         [(PuzzleView*)self.view setTime:[[NSDate dateWithTimeIntervalSince1970:time] timeString]];
+        
+        if (time <= 3.0) {
+            [(PuzzleView*)self.view setTimeColor:[UIColor redColor]];
+        }
     }
 }
 
@@ -153,6 +157,7 @@ static int levels[kLevelsCount][2] = {
         timer = nil;
     }
     timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    [(PuzzleView*)self.view setTimeColor:[UIColor whiteColor]];
 }
 
 - (void)loseWithOutOfTime:(BOOL)outOfTime {

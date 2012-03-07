@@ -46,7 +46,7 @@
 }
 
 - (NSInteger)currentImageIndex {
-    return self.contentOffset.x / self.frame.size.width;
+    return floor((self.contentOffset.x - self.frame.size.width / 2) / self.frame.size.width) + 1;
 }
 
 - (void)scrollToPage:(NSInteger)page animated:(BOOL)animated {

@@ -30,6 +30,7 @@
 
 - (void)initShuffle;
 - (void)setTime:(NSString*)time;
+- (void)setTimeColor:(UIColor*)timeColor;
 - (void)initialize;
 
 @property (nonatomic, assign) id <PuzzleViewProtocol> delegate;

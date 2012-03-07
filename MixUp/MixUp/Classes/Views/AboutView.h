@@ -17,7 +17,7 @@
 
 @end
 
-@interface AboutView : UIView
+@interface AboutView : UIView <UIWebViewDelegate>
 
 @property (nonatomic, assign)id<AboutViewProtocol> delegate;
 

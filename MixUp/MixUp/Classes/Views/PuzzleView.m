@@ -53,6 +53,10 @@
     timer.text = time;
 }
 
+- (void)setTimeColor:(UIColor*)timeColor {
+    timer.textColor = timeColor;
+}
+
 -(void)layoutSubviews {
     [super layoutSubviews];
     
@@ -61,6 +65,8 @@
     CGRect btnFrame = checkBtn.frame;
     btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
     btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+        btnFrame.origin.y -= 25.0;
     checkBtn.frame = btnFrame;
     
     timer.frame = CGRectMake(0.0, 10.0, self.frame.size.width-10.0, 20.0);

@@ -24,7 +24,10 @@
     self = [super initWithFrame:CGRectZero];
     if (self) {
         CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-        headsScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectMake(0.0, -30.0, width, [[ImageManager sharedManager] headImageHeight])] autorelease];
+        CGFloat startOffset = 0.0;
+        if (UI_USER_INTERFACE_IDIOM()!=UIUserInterfaceIdiomPad)
+            startOffset = -30.0;
+        headsScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectMake(0.0, startOffset, width, [[ImageManager sharedManager] headImageHeight])] autorelease];
         [self addSubview:headsScrollView];
         [headsScrollView displayImages:[[ImageManager sharedManager] headsImages]];
          

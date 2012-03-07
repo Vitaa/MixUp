@@ -40,6 +40,8 @@
     CGRect btnFrame = whoAmIBtn.frame;
     btnFrame.origin.y = self.frame.size.height - btnFrame.size.height - 5.0;
     btnFrame.origin.x = (self.frame.size.width - btnFrame.size.width) / 2.0;
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+        btnFrame.origin.y -= 25.0;
     whoAmIBtn.frame = btnFrame;
 }
 

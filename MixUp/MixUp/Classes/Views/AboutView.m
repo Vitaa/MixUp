@@ -18,6 +18,7 @@
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         UIWebView * about = [[[UIWebView alloc] initWithFrame:frame] autorelease];
+        about.delegate = self;
         about.autoresizesSubviews = YES;
         about.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [about loadHTMLString:[NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"about" withExtension:@"html"] encoding:NSUTF8StringEncoding error:nil] 
@@ -31,6 +32,15 @@
 - (void)onBack:(id)sender {
     if ([delegate respondsToSelector:@selector(aboutViewBackButtonPressed:)])
         [delegate aboutViewBackButtonPressed:self];
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:[request URL]];
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end
