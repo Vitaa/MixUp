@@ -24,7 +24,7 @@
     self = [super initWithFrame:CGRectZero];
     if (self) {
         CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-        CGFloat startOffset = 0.0;
+        CGFloat startOffset = -15.0;
         if (UI_USER_INTERFACE_IDIOM()!=UIUserInterfaceIdiomPad)
             startOffset = -30.0;
         headsScrollView = [[[InfiniteScrollView alloc] initWithFrame:CGRectMake(0.0, startOffset, width, [[ImageManager sharedManager] headImageHeight])] autorelease];
