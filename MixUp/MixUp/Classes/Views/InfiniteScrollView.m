@@ -22,17 +22,27 @@
 
 - (void)displayImages:(NSArray*)images {
 
+    CGFloat xOffset = 0.0;
+    CGFloat width   = self.frame.size.width;
+    CGFloat height  = self.frame.size.height;
+    
     UIImageView * imgView = [[[UIImageView alloc] initWithImage:[images lastObject]] autorelease];
+    imgView.frame = CGRectMake(xOffset, 0.0, width, height);
+    xOffset += width;
     [self addSubview:imgView];
     
     for (int i=0; i < [images count]; i++) {
         UIImageView * imgView = [[[UIImageView alloc] initWithImage:[images objectAtIndex:i]] autorelease];
+        imgView.frame = CGRectMake(xOffset, 0.0, width, height);
+        xOffset += width;
         [self addSubview:imgView];
     }
     imgView = [[[UIImageView alloc] initWithImage:[images objectAtIndex:0]] autorelease];
+    imgView.frame = CGRectMake(xOffset, 0.0, width, height);
+    xOffset += width;
     [self addSubview:imgView];
     
-    [self setNeedsLayout];
+    self.contentSize = CGSizeMake(xOffset, self.frame.size.height);
 }
 
 - (NSInteger)currentImageIndex {
@@ -45,31 +55,17 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
-    CGFloat xOffset = 0.0;
-    CGFloat width   = self.frame.size.width;
-    CGFloat height  = self.frame.size.height;
-    
-    for (UIView * subview in self.subviews) {
-        if ([subview isKindOfClass:[UIImageView class]]) {
-            UIImageView * imgView = (UIImageView*)subview;
-            imgView.frame = CGRectMake(xOffset, 0.0, width, height);
-            xOffset += width;
-        }
-    }
-    
-    self.contentSize = CGSizeMake(xOffset, self.frame.size.height);
 }
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {
-    int page = self.contentOffset.x / self.frame.size.width;
-    int pageCount = self.contentSize.width / self.frame.size.width;
+    int page = floor((self.contentOffset.x - self.frame.size.width / 2) / self.frame.size.width) + 1;
+    int pageCount = ceil(self.contentSize.width / self.frame.size.width);
     if (page == 0) {
-        [self setContentOffset:CGPointMake((pageCount-2)*self.frame.size.width, 0)];
+        [self scrollRectToVisible:CGRectMake((pageCount-2)*self.frame.size.width, 0, self.frame.size.width, self.frame.size.height) animated:NO];
     }
     if (page == pageCount-1) {
-        [self setContentOffset:CGPointMake(self.frame.size.width, 0)];
+        [self scrollRectToVisible:CGRectMake(self.frame.size.width, 0, self.frame.size.width, self.frame.size.height) animated:NO];
     }
 }
 

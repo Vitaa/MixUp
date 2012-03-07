@@ -556,7 +556,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -572,7 +572,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "1D10251F-8C9C-4940-AAAC-D87A699D8DDE";
+				PROVISIONING_PROFILE = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -583,7 +583,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -593,7 +593,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "1D10251F-8C9C-4940-AAAC-D87A699D8DDE";
+				PROVISIONING_PROFILE = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -603,13 +603,15 @@
 		5870040114F7748E00A727B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MixUp/MixUp-Prefix.pch";
 				INFOPLIST_FILE = "MixUp/MixUp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -618,13 +620,15 @@
 		5870040214F7748E00A727B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MixUp/MixUp-Prefix.pch";
 				INFOPLIST_FILE = "MixUp/MixUp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

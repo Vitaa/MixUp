@@ -58,6 +58,7 @@ static int levels[kLevelsCount][2] = {
 {
     PuzzleView * view = [[[PuzzleView alloc] init] autorelease];
     view.delegate = self;
+    [view initShuffle];
     self.view = view;
 }
 
@@ -90,8 +91,6 @@ static int levels[kLevelsCount][2] = {
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-    [(PuzzleView*)self.view initShuffle];
     
     currentLevel = 0;
     
