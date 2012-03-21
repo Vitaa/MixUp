@@ -40,7 +40,7 @@
     [self.window makeKeyAndVisible];
     
     [self performSelectorInBackground:@selector(initPlayer) withObject:nil];
-    
+
     return YES;
 }
 

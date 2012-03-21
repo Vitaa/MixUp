@@ -131,6 +131,9 @@
         path = [path substringToIndex:[path rangeOfString:@"~ipad"].location];
         [headsFullPaths addObject:[NSString stringWithFormat:@"animals/%@", path] /*[fullPath stringByAppendingPathComponent:path]*/];
     }
+#ifdef LITE
+#endif
+    
     return headsFullPaths;
 }
 
