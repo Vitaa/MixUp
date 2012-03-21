@@ -16,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {      
-        UIImage * combineImg = [UIImage imageNamed:@"combine_button_normal.png"];
+        UIImage * combineImg = [UIImage imageNamed:@"combine_button_normal"];
         
         combineButton = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, combineImg.size.width, combineImg.size.height)] autorelease];
         [combineButton setBackgroundImage:combineImg forState:UIControlStateNormal];
@@ -24,19 +24,19 @@
         [self addSubview:combineButton];
         
         guessButton = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, combineImg.size.width, combineImg.size.height)] autorelease];
-        [guessButton setBackgroundImage:[UIImage imageNamed:@"guess_button_normal.png"] forState:UIControlStateNormal];
+        [guessButton setBackgroundImage:[UIImage imageNamed:@"guess_button_normal"] forState:UIControlStateNormal];
         [guessButton addTarget:self action:@selector(onGuess:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:guessButton];
         
         aboutButton = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, combineImg.size.width, combineImg.size.height)] autorelease];
-        [aboutButton setBackgroundImage:[UIImage imageNamed:@"about_us_button_normal.png"] forState:UIControlStateNormal];
+        [aboutButton setBackgroundImage:[UIImage imageNamed:@"about_us_button_normal"] forState:UIControlStateNormal];
         [aboutButton addTarget:self action:@selector(onAbout:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:aboutButton];
         
-        topLogo = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]  autorelease];
+        topLogo = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]]  autorelease];
         [self addSubview:topLogo];
         
-        bottomLogo = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_bottom.png"]] autorelease];
+        bottomLogo = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_bottom"]] autorelease];
         [self addSubview:bottomLogo];
     }
     return self;
@@ -48,7 +48,7 @@
     topLogo.frame = CGRectMake((width-topLogo.image.size.width)/2, 10.0, topLogo.frame.size.width, topLogo.frame.size.height);
     bottomLogo.frame = CGRectMake(0.0, self.frame.size.height-bottomLogo.frame.size.height, bottomLogo.frame.size.width, bottomLogo.frame.size.height);
     
-    CGFloat offset = 30.0;
+    CGFloat offset = 20.0;
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         offset += 20.0;
     }

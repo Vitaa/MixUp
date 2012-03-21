@@ -60,5 +60,7 @@
 	</array>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 </dict>
 </plist>

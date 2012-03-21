@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
            
-        UIImage * backImg = [UIImage imageNamed:@"back.png"];
+        UIImage * backImg = [UIImage imageNamed:@"back"];
         backBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, backImg.size.width, backImg.size.height)] autorelease];
         [backBtn setBackgroundImage:backImg forState:UIControlStateNormal];
         [backBtn addTarget:self action:@selector(onBack:) forControlEvents:UIControlEventTouchUpInside];

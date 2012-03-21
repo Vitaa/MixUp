@@ -21,7 +21,7 @@
         animalsView = [[[AnimalsView alloc] init] autorelease];
         [self addSubview:animalsView];
         
-        UIImage * whoAmIImg = [UIImage imageNamed:@"who_am_i_button_normal.png"];
+        UIImage * whoAmIImg = [UIImage imageNamed:@"who_am_i_button_normal"];
         whoAmIBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, whoAmIImg.size.width, whoAmIImg.size.height)] autorelease];
         [whoAmIBtn setBackgroundImage:whoAmIImg forState:UIControlStateNormal];
         [whoAmIBtn addTarget:self action:@selector(whoAmI:) forControlEvents:UIControlEventTouchUpInside];

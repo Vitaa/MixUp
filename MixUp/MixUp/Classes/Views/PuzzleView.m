@@ -20,7 +20,7 @@
         animalsView = [[[AnimalsView alloc] init] autorelease];
         [self addSubview:animalsView];
         
-        UIImage * checkImg = [UIImage imageNamed:@"check_button_normal.png"];
+        UIImage * checkImg = [UIImage imageNamed:@"check_button_normal"];
         checkBtn = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, checkImg.size.width, checkImg.size.height)] autorelease];
         [checkBtn setBackgroundImage:checkImg forState:UIControlStateNormal];
         [checkBtn addTarget:self action:@selector(onCheck:) forControlEvents:UIControlEventTouchUpInside];
