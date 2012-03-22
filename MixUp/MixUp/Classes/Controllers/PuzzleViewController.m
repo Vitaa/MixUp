@@ -9,6 +9,7 @@
 #import "PuzzleViewController.h"
 #import "AudioManager.h"
 #import "NSDate+Time.h"
+#import "UIAlertView+Block.h"
 
 @interface PuzzleViewController()
 - (void)startNewLevel;
@@ -131,6 +132,25 @@ static int levels[kLevelsCount][2] = {
                                otherButtonTitles:NSLocalizedString(@"Еще раз", @""), nil] autorelease] show];
         }  
         else {
+#ifdef LITE
+            if (currentLevel > 2) {   
+                if (arc4random() % 10 >= 8) {
+                    [[UIAlertView alertViewWithTitle:NSLocalizedString(@"Больше картинок в полной версии. Купить?", @"") 
+                                            message:@"" 
+                                  cancelButtonTitle:NSLocalizedString(@"Нет", @"") 
+                                  otherButtonTitles:[NSArray arrayWithObject:NSLocalizedString(@"Да", @"")] 
+                                           onDismiss:^(int buttonIndex) {
+                                               if (buttonIndex == 0) {
+                                                   // open full version url
+                                                   NSLog(@"buy");
+                                               }
+                                           }
+                                            onCancel:^() {
+                                            }] 
+                     show];
+                }
+            }
+#endif
             [self startNewLevel];
         }
     }

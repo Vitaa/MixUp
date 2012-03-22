@@ -12,6 +12,7 @@
 @interface AudioManager : NSObject <AVAudioPlayerDelegate>
 {
     AVAudioPlayer * player;
+    NSTimer * timer;
 }
 
 + (AudioManager*)sharedManager;

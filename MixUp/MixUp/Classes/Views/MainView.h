@@ -23,6 +23,9 @@
     UIButton * guessButton;
     UIButton * combineButton;
     UIButton * aboutButton;
+#ifdef LITE
+    UIButton * fullVersionButton;
+#endif
     
     UIImageView * topLogo;
     UIImageView * bottomLogo;

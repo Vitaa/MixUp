@@ -11,7 +11,7 @@
 
 @interface ImageManager() 
 
-- (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix fullPath:(NSString*)fullPath;
+- (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix;
 
 @property (nonatomic, retain) NSArray * headsImagePaths;
 @property (nonatomic, retain) NSArray * bodiesImagePaths;
@@ -43,12 +43,24 @@
 
 - (id) init {
     if ((self = [super init])) {
-        NSString * path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"animals"];
-        NSArray * animals = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil]; 
+        NSString * basePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"base"];
+        NSArray * baseAnimals = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:basePath error:nil];
+        NSMutableArray * animals = [NSMutableArray array];
+        for (NSString * animal in baseAnimals) {
+            [animals addObject:[NSString stringWithFormat:@"base/%@", animal]];
+        }
         
-        self.headsImagePaths  = [self animalPartsFromArray:animals withPrefix:@"head" fullPath:path];
-        self.bodiesImagePaths = [self animalPartsFromArray:animals withPrefix:@"body" fullPath:path];
-        self.feetImagePaths   = [self animalPartsFromArray:animals withPrefix:@"feet" fullPath:path];
+#ifndef LITE
+        NSString * additionPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"addition"];
+        NSArray * additionAnimals = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:additionPath error:nil];
+        for (NSString * animal in additionAnimals) {
+            [animals addObject:[NSString stringWithFormat:@"addition/%@", animal]];
+        }
+#endif
+        
+        self.headsImagePaths  = [self animalPartsFromArray:animals withPrefix:@"head"];
+        self.bodiesImagePaths = [self animalPartsFromArray:animals withPrefix:@"body"];
+        self.feetImagePaths   = [self animalPartsFromArray:animals withPrefix:@"feet"];
     }
     return self;
 }
@@ -124,12 +136,12 @@
 }
 
 #pragma  mark - private
-- (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix fullPath:(NSString*)fullPath {
+- (NSArray *)animalPartsFromArray:(NSArray*)animals withPrefix:(NSString*)prefix {
     NSArray * heads = [animals filteredArrayUsingPredicate: [NSPredicate predicateWithFormat: @"self contains[c] %@ AND not self contains[c] '~iphone' AND not self contains[c] '2x'", prefix]];
     NSMutableArray * headsFullPaths = [NSMutableArray array];
     for (NSString * path in heads) {
         path = [path substringToIndex:[path rangeOfString:@"~ipad"].location];
-        [headsFullPaths addObject:[NSString stringWithFormat:@"animals/%@", path] /*[fullPath stringByAppendingPathComponent:path]*/];
+        [headsFullPaths addObject:path /*[fullPath stringByAppendingPathComponent:path]*/];
     }
 #ifdef LITE
 #endif

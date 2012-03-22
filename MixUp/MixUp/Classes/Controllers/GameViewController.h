@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "GameView.h"
 
-@interface GameViewController : UIViewController <GameViewProtocol>
+@interface GameViewController : UIViewController <GameViewProtocol> 
+{
+#ifdef LITE
+    int gamesPlayed;
+#endif
+}
 
 @end

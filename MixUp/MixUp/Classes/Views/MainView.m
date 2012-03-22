@@ -33,6 +33,14 @@
         [aboutButton addTarget:self action:@selector(onAbout:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:aboutButton];
         
+#ifdef LITE
+        UIImage * fullImg = [UIImage imageNamed:@"full_version_normal"];
+        fullVersionButton = [[[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, fullImg.size.width, fullImg.size.height)] autorelease];
+        [fullVersionButton setBackgroundImage:fullImg forState:UIControlStateNormal];
+        [fullVersionButton addTarget:self action:@selector(onFullVersion:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:fullVersionButton];
+#endif
+        
         topLogo = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo"]]  autorelease];
         [self addSubview:topLogo];
         
@@ -52,11 +60,21 @@
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         offset += 20.0;
     }
+    CGFloat btnOffset = 20.0;
+#ifdef LITE
+    btnOffset = 10.0;
+    offset -= 10.0;
+#endif
     
     CGSize btnSize = combineButton.frame.size;
     guessButton.frame = CGRectMake((width-btnSize.width)/2, topLogo.frame.size.height+topLogo.frame.origin.y+offset, btnSize.width, btnSize.height);
-    combineButton.frame = CGRectMake((width-btnSize.width)/2, guessButton.frame.origin.y + guessButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
-    aboutButton.frame = CGRectMake((width-btnSize.width)/2, combineButton.frame.origin.y + combineButton.frame.size.height + 20.0, btnSize.width, btnSize.height);
+    combineButton.frame = CGRectMake((width-btnSize.width)/2, guessButton.frame.origin.y + guessButton.frame.size.height + btnOffset, btnSize.width, btnSize.height);
+    CGFloat yAboutOffset = combineButton.frame.origin.y + combineButton.frame.size.height + btnOffset;
+#ifdef LITE
+    fullVersionButton.frame = CGRectMake((width-btnSize.width)/2, yAboutOffset-10.0, fullVersionButton.frame.size.width, fullVersionButton.frame.size.height);
+    yAboutOffset = fullVersionButton.frame.origin.y + fullVersionButton.frame.size.height + btnOffset;
+#endif
+    aboutButton.frame = CGRectMake((width-btnSize.width)/2, yAboutOffset, btnSize.width, btnSize.height);
 }
 
 - (void)onCombine:(id)sender {
@@ -73,5 +91,10 @@
     if ([delegate respondsToSelector:@selector(mainViewAboutButtonPressed:)])
         [delegate mainViewAboutButtonPressed:self];
 }
+
+- (void)onFullVersion:(id)sender {
+
+}
+
 
 @end

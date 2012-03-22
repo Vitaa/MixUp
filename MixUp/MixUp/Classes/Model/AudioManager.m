@@ -120,10 +120,14 @@
 
 #pragma mark - AudioPlayer Delegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+//    currentSound++;
+//    [self playNextSound];
+}
+
+- (void)onTimer:(id)sender {
     currentSound++;
     [self playNextSound];
 }
-
 
 #pragma mark - private
 - (NSURL*)urlForSoundName:(NSString*)name {
@@ -131,13 +135,20 @@
 }
 
 - (void) playNextSound {
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
+    }
     if (currentSound < [sounds count]) {
         if (player) {
+            [player stop];
             [player release];
         }
         player = [[AVAudioPlayer alloc] initWithContentsOfURL:[self urlForSoundName:[sounds objectAtIndex:currentSound]] error:nil];
-        player.delegate = self;
+//        player.delegate = self;
         [player play];
+        
+        timer = [NSTimer scheduledTimerWithTimeInterval:player.duration-0.25 target:self selector:@selector(onTimer:) userInfo:nil repeats:NO];
     }
 }
  
