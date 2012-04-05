@@ -166,9 +166,14 @@ static int levels[kLevelsCount][2] = {
         [[AudioManager sharedManager] playPuzzleSoundsFromAnimalWithState:[currentPuzzle gameState]];
     }
     else {
-        [currentPuzzle release];
         currentLevel++;
-        currentPuzzle = [[Puzzle alloc] initWithLevel:levels[currentLevel][1]];
+        Puzzle * nextPuzzle = [[Puzzle alloc] initWithLevel:levels[currentLevel][1]];
+        while ([currentPuzzle.gameState isEqual:nextPuzzle.gameState]) {
+            [nextPuzzle release];
+            nextPuzzle = [[Puzzle alloc] initWithLevel:levels[currentLevel][1]];
+        }
+        [currentPuzzle release];
+        currentPuzzle = nextPuzzle;
         [[AudioManager sharedManager] playNextPuzzleSoundsFromAnimalWithState:[currentPuzzle gameState]];
     }
     startTime = [[NSDate date] timeIntervalSince1970];

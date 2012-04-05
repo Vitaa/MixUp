@@ -25,6 +25,7 @@
     AnimalsView * animalsView;
     UIButton * checkBtn;
 
+    UIImageView * cloudView;
     UILabel  * timer;
 }
 
