@@ -141,7 +141,7 @@ static int levels[kLevelsCount][2] = {
                                   otherButtonTitles:[NSArray arrayWithObject:NSLocalizedString(@"Да", @"")] 
                                            onDismiss:^(int buttonIndex) {
                                                if (buttonIndex == 0) {
-                                                   // open full version url
+                                                   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/mixup-animals/id517236625?ls=1&mt=8"]];
                                                    NSLog(@"buy");
                                                }
                                            }

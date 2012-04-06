@@ -93,7 +93,7 @@
 }
 
 - (void)onFullVersion:(id)sender {
-
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/mixup-animals/id517236625?ls=1&mt=8"]];
 }
 
 

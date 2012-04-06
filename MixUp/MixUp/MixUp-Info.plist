@@ -11,7 +11,7 @@
 		<string>icon.png</string>
 		<string>icon@2x.png</string>
 		<string>icon-72.png</string>
-		<string>icon@2x-72.png</string>
+		<string>icon-72@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -22,14 +22,14 @@
 				<string>icon.png</string>
 				<string>icon@2x.png</string>
 				<string>icon-72.png</string>
-				<string>icon@2x-72.png</string>
+				<string>icon-72@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>mixup.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.wthr.mixup</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

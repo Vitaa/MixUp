@@ -77,8 +77,7 @@
                            otherButtonTitles:[NSArray arrayWithObject:NSLocalizedString(@"Да", @"")] 
                                    onDismiss:^(int buttonIndex) {
                                        if (buttonIndex == 0) {
-                                           // open full version url
-                                           NSLog(@"buy");
+                                           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://itunes.apple.com/us/app/mixup-animals/id517236625?ls=1&mt=8"]];
                                        }
                                    }
                                     onCancel:^() {

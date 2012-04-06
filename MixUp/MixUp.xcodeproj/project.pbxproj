@@ -197,6 +197,8 @@
 		58DF9BBC150704EC00FD620F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58DF9BBA150704EC00FD620F /* Localizable.strings */; };
 		58DF9BC71507069600FD620F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF9BC81507069600FD620F /* star.png */; };
 		58DF9BC91507069E00FD620F /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 58DF9BCA1507069E00FD620F /* flower.png */; };
+		58E4D685152EFBAB00071147 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D683152EFBAB00071147 /* Default-Portrait@2x~ipad.png */; };
+		58E4D686152EFBAB00071147 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D683152EFBAB00071147 /* Default-Portrait@2x~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -390,6 +392,9 @@
 		58DF9BBE150705E400FD620F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/about.html; sourceTree = "<group>"; };
 		58DF9BC81507069600FD620F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		58DF9BCA1507069E00FD620F /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = "<group>"; };
+		58E4D684152EFBAB00071147 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = "ru.lproj/Default-Portrait@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
+		58E4D688152EFBBC00071147 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/Default-Portrait@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
+		58E4D68D152EFE7400071147 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/combine_button_normal@2x~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,6 +564,7 @@
 				5830E338152D14B700E4BC72 /* icon_lite-72.png */,
 				5830E339152D14B700E4BC72 /* icon_lite-72@2x.png */,
 				5830E33A152D14B700E4BC72 /* icon-72@2x.png */,
+				58E4D683152EFBAB00071147 /* Default-Portrait@2x~ipad.png */,
 				58D31D6E152D155D0044C2C0 /* Default-Portrait~ipad.png */,
 				58D31D64152D15190044C2C0 /* Default@2x.png */,
 				58D31D68152D15240044C2C0 /* Default.png */,
@@ -829,6 +835,7 @@
 				58D31D9D152D25F00044C2C0 /* check_button_normal@2x~ipad.png in Resources */,
 				58D31D9F152D25F00044C2C0 /* full_version_normal@2x~ipad.png in Resources */,
 				58D31DA1152D25F00044C2C0 /* guess_button_normal@2x~ipad.png in Resources */,
+				58E4D686152EFBAB00071147 /* Default-Portrait@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,6 +914,7 @@
 				58D31D8D152D21210044C2C0 /* InfoPlist.strings in Resources */,
 				58D31DD1152D67B00044C2C0 /* octopus_full.wav in Resources */,
 				58D31DD2152D67B00044C2C0 /* octopus_part.wav in Resources */,
+				58E4D685152EFBAB00071147 /* Default-Portrait@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,6 +1255,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58D31DAB152D26850044C2C0 /* ru */,
+				58E4D68D152EFE7400071147 /* en */,
 			);
 			name = "combine_button_normal@2x~ipad.png";
 			sourceTree = "<group>";
@@ -1476,14 +1485,23 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		58E4D683152EFBAB00071147 /* Default-Portrait@2x~ipad.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58E4D684152EFBAB00071147 /* ru */,
+				58E4D688152EFBBC00071147 /* en */,
+			);
+			name = "Default-Portrait@2x~ipad.png";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		583BAB2C15197CC7008B7A74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MixUp/MixUp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1493,8 +1511,8 @@
 				INFOPLIST_FILE = "MixUpLite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "MixUp Lite";
-				PROVISIONING_PROFILE = "D3134013-CDC3-4B7D-AD5F-437E70477FF9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3134013-CDC3-4B7D-AD5F-437E70477FF9";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1503,16 +1521,16 @@
 		583BAB2D15197CC7008B7A74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MixUp/MixUp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "LITE=1";
 				INFOPLIST_FILE = "MixUpLite-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "MixUp Lite";
-				PROVISIONING_PROFILE = "D3134013-CDC3-4B7D-AD5F-437E70477FF9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1523,7 +1541,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1538,8 +1556,8 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1550,17 +1568,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1570,15 +1589,15 @@
 		5870040114F7748E00A727B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MixUp/MixUp-Prefix.pch";
 				INFOPLIST_FILE = "MixUp/MixUp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3134013-CDC3-4B7D-AD5F-437E70477FF9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D3134013-CDC3-4B7D-AD5F-437E70477FF9";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1587,15 +1606,15 @@
 		5870040214F7748E00A727B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Pavel Sumarokov (E623TJ9N5Z)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: kmmbvnr kmmbvnr (WGS3D33538)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MixUp/MixUp-Prefix.pch";
 				INFOPLIST_FILE = "MixUp/MixUp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D3134013-CDC3-4B7D-AD5F-437E70477FF9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D00C7808-EDDA-4CF9-A8EE-BA9FD18BECE1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
